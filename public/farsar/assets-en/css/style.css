@@ -437,5 +437,8 @@ body.menuactive #fullmenu{right:0;top:80px;}
 .section.news h2{font-size:40px;}
 .footer .footerheader, footer .footerheader{width:100%;}
 }
-
-
+@media(max-width:500px){
+.section.products h2,.footer h2,.section.news h2,.section.projects h2{flex-wrap:wrap;text-align:center;width:100%;justify-content:center;}
+.section.products h2 .more{margin-left:0;}
+.section.projects h2 .more{margin-top:0;}
+}

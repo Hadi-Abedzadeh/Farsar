@@ -1,18 +1,23 @@
 $(document).ready(function(){
 $(function(){
+if($(window).width() > 1100){
 $('#fullpage').fullpage({
 	autoScrolling:true,
 	scrollHorizontally: true,
 	onLeave: function(origin, destination, direction){
 	$('body').addClass('loading');
 	setTimeout(function(){$('body').removeClass('loading');},1400);
-	},
+	}
 });
-if($(window).width() < 600){fullpageDisable('enable');}
-$(window).on('resize', function(){
-if($(window).width() < 600){fullpageDisable('enable');}else{fullpageDisable('disable');}
+}else{
+$('html').addClass('responsveevy');
+$('.section').each(function(){
+//$(this).html('<div class="fp-tableCell">'+$(this).html()+'</div>');
+//$(this).prepend('<div class="fp-tableCell">').append('</div>');
+$(this).wrapInner('<div class="fp-tableCell"></div>');
+$(this).addClass('fp-section fp-table fp-completely');
 });
-function fullpageDisable(action){if(action=='enable'){fullpage_api.setAutoScrolling(false);}else{fullpage_api.setAutoScrolling(true);}}
+}
 $('.scrolldown').click(function(){
 $.fn.fullpage.moveSectionDown();
 });

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 383 256" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M20.7570433,169.168021 C-42.3310315,28.6413632 47.2674576,-8.49782482 170.087858,1.53979356 C292.908259,11.5774119 426.802631,42.6940289 317.06965,140.393514 C207.336669,238.093 83.845118,309.694678 20.7570433,169.168021 Z M210.27166,229.777382 C225.880751,221.009499 256.635826,202.069356 284.828509,179.48062 C330.408486,142.960716 341.621458,125.528473 348.66853,122.517188 C417.716319,93.0123664 353.270463,251.947753 283.135316,261.512297 C213.000169,271.07684 177.043018,248.442457 210.27166,229.777382 Z" id="path-1"></path>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Any-Projects" transform="translate(-1003.000000, -316.000000)">
+            <g id="m-(18)" transform="translate(1196.500000, 445.000000) rotate(-5.000000) translate(-1196.500000, -445.000000) translate(1007.000000, 313.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask-2" fill="#D8D8D8" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

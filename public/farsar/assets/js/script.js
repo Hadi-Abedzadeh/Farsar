@@ -83,6 +83,7 @@
      </> Swipers
      </> introduction
     ------------------------------------*/
+    
   var slider_product = new Swiper('.slider-product', {
     slidesPerView: 3,
     spaceBetween: 10,
@@ -111,6 +112,34 @@
       nextEl: '.bdi-arrow-slider-project.next',
       prevEl: '.bdi-arrow-slider-project.prev',
     },
+  });
+
+  var home_slider = new Swiper('.home-slider', {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-product-next',
+      prevEl: '.swiper-product-prev',
+    },
+    breakpoints: {
+    // when window width is <= 620px
+    776: {
+      slidesPerView: 1,
+      // centeredSlides: true,
+      spaceBetween: 10
+    },
+    // when window width is <= 996px
+    996: {
+      slidesPerView: 2,
+      spaceBetween: 15
+    },
+    // when window width is <= 1024px
+    1024: {
+      slidesPerView: 3,
+      // centeredSlides: true,
+      spaceBetween: 20
+    },
+  },
   });
 
   $('img.svg').each(function () {

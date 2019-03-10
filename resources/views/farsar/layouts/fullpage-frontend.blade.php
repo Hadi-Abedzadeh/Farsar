@@ -128,7 +128,7 @@
 
 
                 <div class="container">
-                    <div class="swiper-container slider-product swiper-container-horizontal swiper-container-rtl">
+                    <div class="swiper-container home-slider swiper-container-horizontal swiper-container-rtl">
                         <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
 
                             @foreach($product_list as $product)

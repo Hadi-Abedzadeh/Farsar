@@ -84,10 +84,11 @@
                 </article>
                 <article class="art-header-left">
                     <i class="i-s icon-Search"></i>
+                    <a href="/lang/en">
                     <div class="div-lang">
                         <i class="i-w icon-World"></i>
-                        <a href="/lang/en"><span>English</span></a>
-                    </div>
+                        <span>English</span>
+                    </div></a>
                 </article>
             </section>
             <section class="sec-header-bottom">
@@ -121,7 +122,7 @@
             <section class="sec-slider-product">
                 <header>
                     <h2 class="c-h2">
-                        برخی از <em class="f-c-b">محصولات</em>
+                    محصولات <em class="f-c-b">برتر</em>
                     </h2>
                 </header>
 

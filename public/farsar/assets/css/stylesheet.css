@@ -263,9 +263,10 @@ body {
 .bg-img-header img {
     position: absolute;
     height: auto;
+    min-height: 100%;
     width: 100%;
     z-index: 2;
-    opacity: 0.15;
+    opacity: 0.25;
 }
 
 .bg-img-header::before {
@@ -436,6 +437,7 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
+    text-align: right;
 }
 
 .art-header-bottom-right>p {
@@ -601,12 +603,12 @@ body {
 .art-svg-about-main::after {
     position: absolute;
     content: '';
-    width: 100%;
+    width: 97%;
     height: 100%;
     background-image: url('../images/sample/Path 8.svg');
     background-repeat: no-repeat;
     z-index: -1;
-    top: 3.2rem;
+    top: 2rem;
     left: 0;
 }
 
@@ -621,7 +623,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 16rem 0 0 0;
+    margin: 10rem 0 0 0;
 }
 
 .swiper-product {

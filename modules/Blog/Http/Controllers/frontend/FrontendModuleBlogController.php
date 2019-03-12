@@ -15,22 +15,8 @@ class FrontendModuleBlogController extends Controller
     public function index()
     {
         $locale = set_lang();
-        $order = (request()->input('order')) ? request()->input('order') : 'desc';
-        $order = strtoupper($order);
 
-        switch ($order) {
-            case 'ASC':
-                $sort = 'ASC';
-                break;
-            case 'DESC':
-                $sort = 'DESC';
-                break;
-            default:
-                $sort = 'DESC';
-                break;
-        }
-
-        $blog_posts = Post::whereActive(1)->whereLang($locale)->orderBy('id', $sort)->paginate(env('PAGINATE_COUNT'));
+        $blog_posts = Post::whereActive(1)->whereLang($locale)->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
         $product_list = Product_list::whereLang($locale)->orderBy('id', 'DESC')->limit(8)->get();
         $categories = Category::orderBy('name', 'DESC')->get();
 
@@ -38,7 +24,6 @@ class FrontendModuleBlogController extends Controller
             return view(env('THEME_NAME') . '.frontend.blog.index', compact('blog_posts', 'product_list'));
         } else {
             return view(env('THEME_NAME') . '.frontend-en.blog.index', compact('blog_posts', 'product_list', 'categories'));
-
         }
     }
 
@@ -47,25 +32,29 @@ class FrontendModuleBlogController extends Controller
     {
         $locale = set_lang();
 
-//        if (isset($post->categories[0]->pivot)) {
-//            $category = $post->categories;
-//            $category_id = $category[0]->pivot->category_id;
-//             $category_id = DB::table('category_post')->whereCategory_id($category_id)->get();
-//            foreach ($category_id as $c) {
-//                $similar[] = Post::whereId($c->post_id)->limit(3)->get();
-//            }
-//        } else {
-//            $similar = Post::limit(3)->whereLang($locale)->get();
-//        }
+        $array = array();
+        if (isset($post->categories[0]->pivot)) {
+            $category = $post->categories;
+            $category_id = $category[0]->pivot->category_id;
+             $category_id = DB::table('category_post')->whereCategory_id($category_id)->get();
+            foreach ($category_id as $c) {
+                $similar[] = Post::whereId($c->post_id)->limit(6)->get();
+            }
+            foreach($similar as $s){
+                array_push($array, $s[0]);
+            }
+        } else {
+            $array = Post::limit(6)->whereLang($locale)->get();
+        }
+
 
         $categories = Category::orderBy('name', 'DESC')->get();
 
-
-
+        $tags = $post->tags()->get();
         if ($locale == 'fa') {
-            return view(env('THEME_NAME') . '.frontend.blog.show', compact('post', 'similar'));
+            return view(env('THEME_NAME') . '.frontend.blog.show', compact('post', 'array', 'tags'));
         } else {
-            return view(env('THEME_NAME') . '.frontend-en.blog.show', compact('post', 'categories'));
+            return view(env('THEME_NAME') . '.frontend-en.blog.show', compact('post', 'array', 'categories', 'tags'));
         }
     }
 

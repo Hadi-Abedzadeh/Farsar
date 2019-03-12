@@ -115,3 +115,22 @@ if (!function_exists('active_nav')) {
         return ($_SERVER['REQUEST_URI'] == "$block_name") ? 'active' : '';
     }
 }
+
+function sorting(){
+    $order = (request()->input('order')) ? request()->input('order') : 'desc';
+    $order = strtoupper($order);
+
+    switch ($order) {
+        case 'ASC':
+            $sort = 'ASC';
+            break;
+        case 'DESC':
+            $sort = 'DESC';
+            break;
+        default:
+            $sort = 'DESC';
+            break;
+    }
+
+    return $sort;
+}

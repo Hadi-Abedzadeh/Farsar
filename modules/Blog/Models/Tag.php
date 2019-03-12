@@ -1,13 +1,19 @@
 <?php
 
-namespace Modules\News\Models;
+namespace Modules\Blog\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class Tag extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['id', 'name'];
+
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class);
+    }
+
 
     use Sluggable;
 
@@ -20,9 +26,8 @@ class News extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'name'
             ]
         ];
     }
-
 }

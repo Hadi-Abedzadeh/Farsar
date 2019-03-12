@@ -19,7 +19,8 @@ class FrontendModuleNewsController extends Controller
     public function index()
     {
         $locale = set_lang();
-        $news = News::whereLang($locale)->orderBy('id', 'desc')->paginate(env('PAGINATE_COUNT'));
+        $news = News::whereLang($locale)->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
+
         $product_list = Product_list::whereLang($locale)->orderBy('id', 'DESC')->limit(8)->get();
 
         $blog_posts = Post::whereLang($locale)->orderBy('id', 'DESC')->limit(4)->get();
@@ -60,10 +61,9 @@ class FrontendModuleNewsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($news)
     {
         $locale = set_lang();
-        $news = News::whereSlug($slug)->firstOrFail();
 
         $projects = Project::whereLang($locale)->orderBy('id', 'DESC')->limit(3)->get();
 

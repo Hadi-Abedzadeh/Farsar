@@ -1,4 +1,4 @@
-@extends(env('THEME_NAME').'.layouts.fullpage-frontend')
+@extends(env('THEME_NAME').'.layouts.frontend')
 @section('content')
 
     @switch(set_lang())
@@ -11,8 +11,9 @@
         </div>
         @break
         @case('fa')
-404444
+
+        404444
         @break
 
     @endswitch
-    @endsection
+@endsection

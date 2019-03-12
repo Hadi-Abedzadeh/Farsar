@@ -16,6 +16,8 @@ class BackendModuleNewsController extends Controller
      */
     public function index()
     {
+        $locale = set_lang();
+
         $news = News::paginate(env('PAGINATE_COUNT_ADMIN'));
         return view('default.news.backend.index', compact('news'));
     }

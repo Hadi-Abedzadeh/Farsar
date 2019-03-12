@@ -13,9 +13,7 @@
 
 
 app()->setLocale('en');
-
 require_once(base_path('load_modules.php'));
-
 
 Route::get('/lang/{lang}', function ($lang) {
 
@@ -32,8 +30,7 @@ Route::get('/lang/{lang}', function ($lang) {
 
     \Illuminate\Support\Facades\Request::session()->put('lang', $select_lang);
 
-
-    return redirect(route('frontend'));
+    return redirect()->back();
 });
 
 Route::get('/', function () {
@@ -41,6 +38,7 @@ Route::get('/', function () {
     $contact = \App\Contact::first();
 
     $news = \Modules\News\Models\News::whereLang($locale)->limit(8)->get();
+
     if ($locale == 'fa') {
         $product_list = \Modules\Product\Models\Product::whereLang('fa')->orderBy('id', 'DESC')->limit(8)->get();
         return view(env('THEME_NAME') . '.layouts.fullpage-frontend', compact('contact', 'product_list'));
@@ -48,8 +46,8 @@ Route::get('/', function () {
         $product_list = \Modules\Product\Models\Product_list::whereLang('en')->orderBy('id', 'DESC')->limit(3)->get();
         return view(env('THEME_NAME') . '.frontend-en.layouts.fullpage-frontend', compact('contact', 'product_list', 'news'));
     }
-})->name('frontend');
 
+})->name('frontend');
 
 Route::prefix('backend')->middleware('auth')->group(function () {
     Route::resource('/contact-us', 'backend\BackendContactController');

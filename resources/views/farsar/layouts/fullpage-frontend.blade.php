@@ -127,27 +127,29 @@
                 </header>
 
 
-
                 <div class="container">
                     <div class="swiper-container home-slider swiper-container-horizontal swiper-container-rtl">
                         <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                            @isset($product_list)
+                                @foreach($product_list as $product)
 
-                            @foreach($product_list as $product)
-
-                                <div class="swiper-slide swiper-slide-active" style="margin-left: 11px;">
-                                    <article class="art-content-sider">
-                                        <div>
-                                            <figure>
-                                                <img src="{{ ($product->imageUrl) }}" alt="" title="">
-                                            </figure>
-                                        </div>
-                                        <header>
-                                            <h3 class="c-h2">{!! $product->title !!}</h3>
-                                        </header>
-                                        <a class="a-btn-bggr a-btn" href="{{ route('frontend.product.show', ['slug' => $product->slug ])}}" title="مشاهده محصول">مشاهده محصول</a>
-                                    </article>
-                                </div>
-                            @endforeach
+                                    <div class="swiper-slide swiper-slide-active" style="margin-left: 11px;">
+                                        <article class="art-content-sider">
+                                            <div>
+                                                <figure>
+                                                    <img src="{{ ($product->imageUrl) }}" alt="" title="">
+                                                </figure>
+                                            </div>
+                                            <header>
+                                                <h3 class="c-h2">{!! $product->title !!}</h3>
+                                            </header>
+                                            <a class="a-btn-bggr a-btn"
+                                               href="{{ route('frontend.product.show', ['slug' => $product->slug ])}}"
+                                               title="مشاهده محصول">مشاهده محصول</a>
+                                        </article>
+                                    </div>
+                                @endforeach
+                            @endisset
                         </div>
                         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                 </div>
@@ -160,8 +162,11 @@
                 <section class="sec-best-prodouct">
                     <article class="art-svg-product">
                         <figure>
-                            <img class="img-bg-svg-pro" src="/{{ env('THEME_NAME') }}/assets/images/sample/svg-best-product.svg" alt="" title="">
-                            <img class="img-art-pro" src="/{{ env('THEME_NAME') }}/assets/images/sample/product/pro1.png" alt="" title="">
+                            <img class="img-bg-svg-pro"
+                                 src="/{{ env('THEME_NAME') }}/assets/images/sample/svg-best-product.svg" alt=""
+                                 title="">
+                            <img class="img-art-pro"
+                                 src="/{{ env('THEME_NAME') }}/assets/images/sample/product/pro1.png" alt="" title="">
                         </figure>
                     </article>
                     {{ create_box_forth(5) }}

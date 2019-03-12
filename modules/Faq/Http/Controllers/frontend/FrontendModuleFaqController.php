@@ -16,7 +16,7 @@ class FrontendModuleFaqController extends Controller
     public function index()
     {
         $faq = Faq::all();
-        return view('default.faq.frontend.index', compact('faq'));
+        return view(env('THEME_NAME').'.faq.frontend.index', compact('faq'));
     }
 
     /**

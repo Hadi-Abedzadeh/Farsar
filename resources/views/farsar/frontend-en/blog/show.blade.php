@@ -10,62 +10,40 @@
                 {{ $post->body }}
             </p>
         </div>
-        <div class="singletags">
-            <span>Keywords: </span><a href="#">#Farsar</a><a href="#">#فرسار</a>
+        @if($tags->count() > 0)
+            <div class="singletags">
 
-        </div>
+                <span>Tags: </span>
+                @foreach($tags as $tag)
+                    <a href="{{ route('tag.show', ['slug' => $tag->slug]) }}">{{$tag->name}}</a>
+                    @if(!$loop->last) ,@endif
+                @endforeach
+            </div>
+        @endif
+        <br>
 
         <div class="newsitems singleslider owl-carousel">
 
-            <div class="newsitem">
-                <div class="newsitemimg"><img src="/images/NewsFA5.jpg" draggable="false"></div>
-                <div class="newsitemcontainer">
-                    <h4>Lorem Ipsum is simply</h4>
-                    <p>Dummy text of the printing and
-                        type setting industry.<br/>
-                        Lorem Ipsum has been the
-                        industry's standard dummy text
-                        ever since the 1500s...</p>
-                    <div class="newsitemfooter">
-                        <a href="blogsingle.php" class="more">See More</a>
+
+            @foreach($array as $s)
+
+                <div class="newsitem">
+                    <div class="newsitemimg"><img src="{{$s->imageUrl}}" draggable="false"></div>
+                    <div class="newsitemcontainer">
+                        <h4>{{ $s->title }}</h4>
+                        <p>
+                            {{ substr(strip_tags($s->body), 0, 200) }}
+                            {{ strlen(strip_tags($s->body)) > 50 ? "..." : "" }}
+                        </p>
+                        <div class="newsitemfooter">
+                            <a href="{{ route('frontend.blog.index.slug', ['slug' => $s->slug ])}}" class="more">See More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
 
-            <div class="newsitem">
-                <div class="newsitemimg"><img src="/images/NewsFA6.jpg" draggable="false"></div>
-                <div class="newsitemcontainer">
-                    <h4>Lorem Ipsum is simply</h4>
-                    <p>Dummy text of the printing and
-                        type setting industry.<br/>
-                        Lorem Ipsum has been the
-                        industry's standard dummy text
-                        ever since the 1500s...</p>
-                    <div class="newsitemfooter">
-                        <a href="blogsingle.php" class="more">See More</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="newsitem">
-                <div class="newsitemimg"><img src="/images/NewsFA7.jpg" draggable="false"></div>
-                <div class="newsitemcontainer">
-                    <h4>Lorem Ipsum is simply</h4>
-                    <p>Dummy text of the printing and
-                        type setting industry.<br/>
-                        Lorem Ipsum has been the
-                        industry's standard dummy text
-                        ever since the 1500s...</p>
-                    <div class="newsitemfooter">
-                        <a href="#" class="more">See More</a>
-                    </div>
-                </div>
-            </div>
 
         </div>
-
-
     </div>
 @endsection
 

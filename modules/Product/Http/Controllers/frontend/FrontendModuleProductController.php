@@ -18,14 +18,14 @@ class FrontendModuleProductController extends Controller
     public function index()
     {
         $locale = set_lang();
-        $product_category = Product::whereLang($locale)->get();
+        $product_category = Product::whereLang($locale)->orderBy('id', sorting())->get();
         $posts = Post::whereLang($locale)->limit(5)->get();
 
         if ($locale == 'fa') {
-            $products = Product::whereLang($locale)->limit(5)->get();
+            $products = Product::whereLang($locale)->orderBy('id', sorting())->limit(5)->get();
             return view(env('THEME_NAME') . '.frontend.product.index', compact('products', 'posts'));
         } else {
-            $products = Product_list::whereLang($locale)->paginate(env('PAGINATE_COUNT'));
+            $products = Product_list::whereLang($locale)->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
             return view(env('THEME_NAME') . '.frontend-en.product.index', compact('products', 'product_category'));
         }
     }

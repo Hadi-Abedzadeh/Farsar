@@ -15,8 +15,7 @@
                         <div class="col-md-8">
                             <article class="art-content-blog">
                                 <figure>
-                                    <img class="img-blog " src="{{$report->imageUrl}}" alt=""
-                                         title="">
+                                    <img class="img-blog " src="{{$report->imageUrl}}" alt="" title="">
                                     <img class="img-before " src="/{{env('THEME_NAME')}}/assets/images/sample/blogs.svg" alt="" title="">
                                     <img class="img-before-c " src="/{{env('THEME_NAME')}}/assets/images/sample/blogsc.svg" alt="" title="">
                                 </figure>

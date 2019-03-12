@@ -6,6 +6,8 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Route;
 use Modules\Blog\Models\Category;
 use Modules\Blog\Models\Post;
+use Modules\Blog\Models\Tag;
+use Modules\News\Models\News;
 use Modules\Product\Models\Product;
 use Modules\Product\Models\Product_list;
 
@@ -33,8 +35,8 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('postSlug', function ($slug) { return Post::whereSlug($slug)->firstOrFail(); });
         Route::bind('product_listSlug', function ($slug) { return Product_list::whereSlug($slug)->firstOrFail(); });
         Route::bind('catalogSlug', function ($slug) { return Product::whereSlug($slug)->firstOrFail(); });
-
-
+        Route::bind('newsSlug', function ($slug) { return News::whereSlug($slug)->firstOrFail(); });
+        Route::bind('tagSlug', function ($slug) { return Tag::whereSlug($slug)->firstOrFail(); });
     }
 
     /**

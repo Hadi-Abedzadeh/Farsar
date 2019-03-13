@@ -142,6 +142,16 @@
   },
   });
 
+  $('.icon-Search,.close-search').click(function(){
+    if(!$(".site-header-main").hasClass('active')){
+       $('.site-header-main').addClass('active');
+       $('.search-header input').focus();
+    }
+    else{
+      $('.site-header-main').removeClass('active');
+    }
+  });
+
   $('img.svg').each(function () {
     var $img = $(this);
     var imgID = $img.attr('id');

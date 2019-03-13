@@ -2290,7 +2290,7 @@ a.a-btn-blog {
 /* End Contact  */
 
 /* Start Responsive  */
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 1200px){
     .set-header-top > article{margin: auto; margin-top: 20px;}
     .art-svg-about-main{display: none;}
 }

@@ -2834,7 +2834,7 @@ background-image: linear-gradient(-180deg, #15cfcf 14%, #1478cf 100%);
 
 /* search div */
 .site-header-main.site-header-main-single.active ~ .search-header{top:0;}
-.site-header-main.site-header-main-single.active{filter:blur(5px);}
+.site-header-main.site-header-main-single.active{filter:blur(10px);}
 .search-header{position:absolute;top:-200px;left:0;right:0;z-index:20;width:100%;height: 280px; -webkit-backdrop-filter: blur(4px);  backdrop-filter: blur(4px); background-image: url(../images/sample/search-rectangle.svg);background-size: 100% 100%;background-repeat: no-repeat;display: flex;justify-content: center;transition: all .4s;}
 .search-header form{position: relative;z-index: 2;width: 82%;text-align: center;top: 55px;}
 .search-header form i{color:white; font-size: 20px; margin-left: 15px;position: relative;}

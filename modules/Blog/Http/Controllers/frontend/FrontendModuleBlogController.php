@@ -47,7 +47,6 @@ class FrontendModuleBlogController extends Controller
             $array = Post::limit(6)->whereLang($locale)->get();
         }
 
-
         $categories = Category::orderBy('name', 'DESC')->get();
 
         $tags = $post->tags()->get();

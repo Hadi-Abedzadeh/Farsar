@@ -39,12 +39,13 @@ Route::get('/', function () {
 
     $news = \Modules\News\Models\News::whereLang($locale)->limit(8)->get();
 
+    $projects = \Modules\Project\Models\Project::whereLang($locale)->orderBy('id', 'desc')->limit(3)->get();
     if ($locale == 'fa') {
         $product_list = \Modules\Product\Models\Product::whereLang('fa')->orderBy('id', 'DESC')->limit(8)->get();
         return view(env('THEME_NAME') . '.layouts.fullpage-frontend', compact('contact', 'product_list'));
     }else{
         $product_list = \Modules\Product\Models\Product_list::whereLang('en')->orderBy('id', 'DESC')->limit(3)->get();
-        return view(env('THEME_NAME') . '.frontend-en.layouts.fullpage-frontend', compact('contact', 'product_list', 'news'));
+        return view(env('THEME_NAME') . '.frontend-en.layouts.fullpage-frontend', compact('contact', 'product_list', 'news', 'projects'));
     }
 
 })->name('frontend');

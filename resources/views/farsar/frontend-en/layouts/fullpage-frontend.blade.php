@@ -80,55 +80,46 @@
                             <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                             <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                         </div>
-                        <a href="{{ route('frontend.product.show', ['slug' => $product->slug]) }}" class="getmore">Get Order</a>
+                        <a href="{{ route('frontend.product.show', ['slug' => $product->slug]) }}" class="getmore">Get
+                            Order</a>
                     </div>
                 @endforeach
 
             </div>
         </div>
     </div>
-    <div class="section projects" data-all="2" data-active="1">
+    <div class="section projects" data-all="{{$projects->count()}}" data-active="1">
         <div class="projectinfo">
-            <div class="inner gallery-1 active">
-                <div class="container">
-                    <h2><span>Projects</span><a href="{{ route('frontend.project.index') }}" class="more">See More</a></h2>
-                    <h3>Sarallah Hospital</h3>
-                    <p>Lorem Ipsum is simply dummy text of
-                        the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of
-                        type and scrambled it to make a type
-                        specimen book. It has survived not only
-                        five centuries, but also the leap into
-                        electronic typesetting, remaining
-                        essentially unchanged.</p>
-                    <a class="nextproject">Next Project</a>
+            @foreach($projects as $project)
+                <div class="inner gallery-{{$loop->iteration}} @if($loop->first) active @endif">
+                    <div class="container">
+                        <h2><span>Projects</span>
+                            <a href="{{ route('frontend.project.index') }}" class="more">See More</a></h2>
+                        <h3> {{$project->title}} </h3>
+                        <p>
+                            {{ substr(strip_tags($project->body), 0, 400) }}
+                            {{ strlen(strip_tags($project->body)) > 50 ? "..." : "" }}
+                        </p>
+                        <a class="nextproject">Next Project</a>
+                    </div>
                 </div>
-            </div>
-            <div class="inner gallery-2">
-                <div class="container">
-                    <h2><span>Projects</span><a href="#" class="more">See More</a></h2>
-                    <h3>Mehrad Hospital</h3>
-                    <p>Lorem Ipsum is simply dummy text of
-                        the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of
-                        type and scrambled it to make a type
-                        specimen book. It has survived not only
-                        five centuries, but also the leap into
-                        electronic typesetting, remaining
-                        essentially unchanged.</p>
-                    <a class="nextproject">Next Project</a>
-                </div>
-            </div>
+            @endforeach
+
         </div>
         <div class="projectgallery">
-            <div class="innergallery gallery-1 active" data-all="2" data-active="1">
-                <img src="/{{env('THEME_NAME')}}/assets-en/images/project1.jpg" class="galleryimg-1 active">
-                <img src="/{{env('THEME_NAME')}}/assets-en/images/project2.jpg" class="galleryimg-2 active">
+
+            @foreach($projects as $project)
+
+
+                    <div class="innergallery gallery-{{$loop->iteration}} active" data-all="{{$projects->count()}}" data-active="1">
+                @foreach(json_decode($project->imageUrls, true) as $img)
+                    <img src="{{ $img }}" class="galleryimg-1 active">
+                    @if($loop->iteration > 2)
+                        @break
+                            @endif
+                @endforeach
             </div>
+            @endforeach
 
             <div class="projectcontroller">
                 <div class="prevgallery"></div>
@@ -143,7 +134,8 @@
 
                 @foreach($news as $report)
                     <div class="newsitem">
-                        <div class="newsitemimg"><img src="/{{env('THEME_NAME')}}/assets-en/images/news3.jpg" draggable="false"></div>
+                        <div class="newsitemimg"><img src="/{{env('THEME_NAME')}}/assets-en/images/news3.jpg"
+                                                      draggable="false"></div>
                         <div class="newsitemcontainer">
                             <h4>{{ $report->title }}</h4>
                             <p>
@@ -151,7 +143,8 @@
                                 {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
                             </p>
                             <div class="newsitemfooter">
-                                <a href="{{ route('frontend.news.index.show', ['slug'=>$report->slug]) }}" class="more">See More</a>
+                                <a href="{{ route('frontend.news.index.show', ['slug'=>$report->slug]) }}" class="more">See
+                                    More</a>
                             </div>
                         </div>
                     </div>
@@ -176,10 +169,18 @@
             </div>
             <div class="footeraddress">
                 <div class="container">
-                    <div class="footeraddresstab"><div class="icon map"></div><p>Unit. 141, Fl. 14, Sadaf Tower.<br/>Sheikh Bahaee Sq. Tehran, IRAN.</p></div>
-                    <div class="footeraddresstab"><div class="icon phone"></div><p>+982188211110</p></div>
-                    <div class="footeraddresstab"><div class="icon fax"></div><p>+982188211110</p></div>
-                    <div class="footeraddresstab"><div class="icon email"></div><p>info@cafelead.agency</p></div>
+                    <div class="footeraddresstab">
+                        <div class="icon map"></div>
+                        <p>Unit. 141, Fl. 14, Sadaf Tower.<br/>Sheikh Bahaee Sq. Tehran, IRAN.</p></div>
+                    <div class="footeraddresstab">
+                        <div class="icon phone"></div>
+                        <p>+982188211110</p></div>
+                    <div class="footeraddresstab">
+                        <div class="icon fax"></div>
+                        <p>+982188211110</p></div>
+                    <div class="footeraddresstab">
+                        <div class="icon email"></div>
+                        <p>info@cafelead.agency</p></div>
                 </div>
                 <div class="socialmedias">
                     <h5>Follow Us</h5>

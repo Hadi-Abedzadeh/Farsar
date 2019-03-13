@@ -97,6 +97,7 @@
             <img src="/{{env('THEME_NAME')}}/assets/images/sample/header.svg" alt="" title="">
         </figure>
     </header>
+    <div class="search-header"><form action="#"><i class="i-s icon-Search"></i><input type="search" placeholder="عبارت مورد نظر خود را وارد کنید … "></form><span class="close-search"><img src="/{{env('THEME_NAME')}}/assets/images/sample/close-search.svg" alt="" title=""></span></div>
     <main>
 
 @yield('content')

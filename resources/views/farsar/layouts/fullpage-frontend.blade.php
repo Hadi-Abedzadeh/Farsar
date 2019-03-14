@@ -93,7 +93,7 @@
             </section>
             <section class="sec-header-bottom">
                 {{ create_box(1) }}
-
+                    
                 {{ create_box_first(2) }}
             </section>
         </div>
@@ -111,7 +111,7 @@
             </div>
             <section class="sec-about-main">
                 <div class="container">
-                    {{ create_box_third(4) }}
+                    {{ create_box_third(4) }}  
 
                 </div>
                 <article class="art-svg-about-main">

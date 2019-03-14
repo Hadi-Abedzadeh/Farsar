@@ -17,17 +17,22 @@
     <link rel="stylesheet" href="/{{env('THEME_NAME')}}/assets-en/css/style.css" type="text/css">
 </head>
 <div id="menuactiver">
-    <a class="logo" href="{{ route('frontend') }}"></a>
+	<a class="logo" href="{{ route('frontend') }}"></a>
     <div class="menuicon">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    <a class="langchoser" href="/lang/fa">FA</a>
-
+	<div class="langchoser">
+	<a class="currentlang">EN</a>
+	<div class="chooselang">
+	<a href="#" class="lebanon">AR</a>
+	<a href="/lang/fa" class="persian">FA</a>
+	<a href="#" class="russia">RU</a>
+	</div>
+	</div>
 </div>
 <div class="fullmenucloser"></div>
-
 @include(env('THEME_NAME'). '.frontend-en.layouts.nav')
 <div id="fullpage">
     <div class="section header">

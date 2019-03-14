@@ -17,12 +17,17 @@
     <link rel="stylesheet" href="/{{ env('THEME_NAME') }}/assets-en/css/style.css" type="text/css">
 </head>
 <div id="menuactiver">
+	<h1>@yield('title')</h1>
+	<a class="logo" href="{{ route('frontend') }}"></a>
     <div class="menuicon">
         <span></span>
         <span></span>
         <span></span>
     </div>
 </div>
+
+
+
 <div class="fullmenucloser"></div>
 @include(env('THEME_NAME').'.frontend-en.layouts.nav')
 <div id="area">

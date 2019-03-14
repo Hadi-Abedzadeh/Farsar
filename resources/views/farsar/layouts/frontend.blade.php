@@ -67,6 +67,11 @@
 
 <body>
 <div class="wrapper" id="main-page">
+<div id="fullmenu">
+    <div class="container">
+        @include(env('THEME_NAME').'.layouts.nav-menu')
+    </div>
+</div>
     <header class="site-header site-header-main site-header-main-single" id="sectionup">
         <figure class="bg-img-header bg-gr-header">
             <img src="/{{env('THEME_NAME')}}/assets/images/sample/bg-header1.png" alt="" title="">

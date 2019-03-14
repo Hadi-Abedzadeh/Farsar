@@ -170,4 +170,6 @@
     }, 'xml');
   });
 
+  $('.menuicon,.fullmenucloser').on('click',function(){if($('body').hasClass('menuactive')){$('body').removeClass('menuactive');return false;}$('body').addClass('menuactive');});
+  
 })(jQuery);

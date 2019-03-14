@@ -1,5 +1,6 @@
 @extends(env('THEME_NAME').'.frontend-en.layouts.frontend')
 @section('content')
+	<div class="container">
     <div class="innerarea">
     <div class="projectlist">
         @foreach($projects as $project)
@@ -30,7 +31,8 @@
             {{--<a href="#">Next</a>--}}
         {{--</div>--}}
     </div>
-</div>
+	</div>
+	</div>
 
     @endsection
 

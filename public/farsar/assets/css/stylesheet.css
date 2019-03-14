@@ -2292,6 +2292,12 @@ a.a-btn-blog {
 
 /* End Contact  */
 
+#fullmenu{opacity:0;right:-100%;position:fixed;display:flex;justify-content:center;align-content:center;flex-direction:column;z-index:5;top:0;width:100%;height:100%;}
+#fullmenu:after{content:'';opacity:.8;position:absolute;width:100%;height:100%;top:0;right:0;z-index:-1;background-image: linear-gradient(50deg, #15cfcf 0%, #1478cf 100%);}
+#fullmenu a{transition:.2s;position:relative;display:block;width:100%;text-align:center;font-size:22px;line-height:8vh;height:8vh;margin:1px 0;font-weight:600;color:#222;}
+#fullmenu a:after{transition:.3s ease-in-out;content:'';position:absolute;background:#222;right:-50px;width:15px;height:10px;margin:auto;top:0;bottom:0;}
+#fullmenu a:hover:after{transform:scaleX(4);background:#ffff19;}
+
 /* Start Responsive  */
 @media only screen and (max-width: 1200px){
 .primary-menu{display:none;}
@@ -2300,6 +2306,17 @@ a.a-btn-blog {
 .menuactive .menuicon span:nth-child(1){transform:translateY(11px) rotateZ(45deg);}
 .menuactive .menuicon span:nth-child(2){transform:scaleX(0);}
 .menuactive .menuicon span:nth-child(3){transform:translateY(-10px) rotateZ(-45deg);}
+body.menuactive header{z-index:6;position:fixed!important;top:0;right:0;width:100%;}
+body.menuactive #fullmenu{right:0;opacity:1;}
+.fullmenucloser{position:fixed;z-index:3;width:100%;height:100%;top:0;right:-100%;background:#fff;opacity:0;transition:.3s opacity;}
+body.menuactive .fullmenucloser{right:0;opacity:.5;}
+body.menuactive footer,body.menuactive main{filter:blur(5px);}
+#fullmenu .container{opacity:0;transition:.5s opacity;padding-top:90px;display:flex;justify-content:center;}
+body.menuactive #fullmenu .container{opacity:1;}
+body.menuactive .bg-img-header-bottom{display:none!important;}
+body.menuactive .site-header-main.site-header-main-single .set-header-top{padding: 2.5rem 0 1.4rem 0;}
+body.menuactive .bg-gr-header::before,body.menuactive .bg-img-header{opacity:0;}
+body.menuactive #main-page{padding-top:155px;}
 }
 
 @media only screen and (max-width: 1024px){
@@ -2819,6 +2836,9 @@ background-image: linear-gradient(-180deg, #15cfcf 14%, #1478cf 100%);
     .art-slider-content-project > .swiper-slider-project::before{
         content:none;
     }
+	
+	.sect-slider-content-project.sect-slider-content-any-blog{padding:5rem 0 0 0;}
+	
 
     /** End Any Project **/
 }
@@ -2838,6 +2858,10 @@ background-image: linear-gradient(-180deg, #15cfcf 14%, #1478cf 100%);
     display: none;
 }
 
+@media only screen and (max-width: 350px){
+.div-lang{width:7.5rem;}
+.div-lang > .i-w{display:none;}
+}
 /* End Responsive  */
 
 /* 404 */

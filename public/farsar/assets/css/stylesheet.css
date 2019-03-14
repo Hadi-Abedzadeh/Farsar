@@ -498,7 +498,7 @@ body {
     height: 34.5rem;
     border-radius: 3.2rem;
     background: #fff;
-    padding: 4rem 4.3rem;
+    padding: 4rem 2.3rem;
     transition: .1s ease-in-out;
 }
 
@@ -2580,7 +2580,7 @@ background-image: linear-gradient(-180deg, #15cfcf 14%, #1478cf 100%);
     }
 
     .art-content-blog {
-        max-width: 29rem;
+        /* max-width: 29rem; */
         margin: auto;
     }
 
@@ -2888,3 +2888,16 @@ background-image: linear-gradient(-180deg, #15cfcf 14%, #1478cf 100%);
 .search-header form input::placeholder{color:white;opacity: 1;text-align: center;}
 .search-header .close-search{position: absolute;top: 150px;margin: auto;text-align: center;left: 0;right: 0;cursor: pointer;width: 50px;height: 50px;background-color: #1995a6;justify-content: center;align-items: center;display: flex;border-radius: 100%;box-shadow: 0 0 0 6px rgba(25, 149, 166, 0.35);z-index: 3;transition: all .4s;}
 .search-header .close-search:hover{box-shadow: 0 0 0 12px rgba(25, 149, 166, 0.35);background-color: #136c78;}
+
+/* product list */
+        .sect-slider-content-project>div .items {padding: 0 8px;margin-top: 30px;}
+        .sect-slider-content-project>div .items>article {display: flex;flex-wrap: wrap;align-content: flex-start;justify-content: space-evenly;padding: 2.9rem 0 2.7rem 0;width: 100%;height: 247px;box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.07);border-radius: 3.2rem;background-color: #fff;transition: .3s ease-in-out;}
+        .sect-slider-content-project>div .items>article .thumbnail {height: 100%;position: relative;}
+        .sect-slider-content-project>div .items>article .thumbnail figure{position: relative;height: 100%;justify-content: center;align-items: center;display: flex;}
+        .sect-slider-content-project>div .items>article .thumbnail figure img {max-height: 100%;max-width: 100%;position: relative;}
+        .sect-slider-content-project>div .items>article .content {display: flex;align-items: center;flex-wrap: wrap;flex-direction: column;justify-content: center;}
+        .sect-slider-content-project>div .items>article .content h3 {font-size: 15px;font-weight: normal;font-style: normal;font-stretch: normal;line-height: normal;letter-spacing: normal;text-align: right;color: #a1a1a1;}
+        .sect-slider-content-project>div .items>article .content h3 em {font-size: 26px;font-weight: 800;color: #1478cf;}
+        .sect-slider-content-project>div .items>article .content a {display: flex;align-items: center;justify-content: center;color: #fff;font-size: 1.5rem;font-weight: 500;width: 21rem;height: 6.4rem;border-radius: 3.2rem;background-image: linear-gradient(225deg, #15cfcf 0%, #1478cf 100%);transition: .3s ease-in-out;margin-top: 20px;}
+        .sect-slider-content-project>div .items>article .content a:hover{transform: scale(1.02);box-shadow: 0 15px 30px 1px rgba(0, 0, 0, .08);}
+/* product list */

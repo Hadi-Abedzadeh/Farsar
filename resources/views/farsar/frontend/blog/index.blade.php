@@ -12,7 +12,7 @@
             </header>
             <div class="row p20">
                 @foreach($blog_posts as $post)
-                <div class="col-md-8">
+                <div class="col-lg-8 col-md-12 col-sm-24">
                     <article class="art-content-blog">
                         <figure>
                             <img class="img-blog " src="{{ $post->imageUrl }}" alt="" title="">

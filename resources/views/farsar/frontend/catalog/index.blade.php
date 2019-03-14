@@ -12,7 +12,7 @@
                 <div class="row p15">
 
                     @foreach($catalogs as $catalog)
-                        <div class="col-md-8">
+                        <div class="col-lg-8 col-md-12 col-sm-24">
                             <article class="art-content-cataloge">
                                 <a href="{{ $catalog->url }}" title=""></a>
                                 <div class="bdi-down bdi-bg-c">

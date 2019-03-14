@@ -15,7 +15,7 @@
                         <div class="row p15">
 
                             @foreach($products as $product)
-                                <div class="col-md-8">
+                                <div class="col-xl-8 col-lg-12 col-md-12 col-sm-24">
                                     <article class="art-content-sider art-content-sider-any art-content-sider-products">
                                         <div>
                                             <figure>
@@ -25,7 +25,7 @@
                                         <header>
                                             <h3 class="c-h2">{{ $product->title }}</h3>
                                         </header>
-                                        <a class="a-btn-bggr a-btn" href="{{route('frontend.product.catalog', ['slug' => $product->slug])}}" title="مشاهده محصول">مشاهدهمحصول</a>
+                                        <a class="a-btn-bggr a-btn" href="{{route('frontend.product.catalog', ['slug' => $product->slug])}}" title="مشاهده محصول">مشاهده محصول</a>
                                     </article>
                                 </div>
                             @endforeach

@@ -40,7 +40,7 @@ class Helper
     {
         $cards = Card::wherePage_id($id)->whereActive(1)->get();
         foreach ($cards as $card) {
-            echo "<div class=\"col-md-6\">
+            echo "<div class=\"col-xl-6 col-lg-6 col-md-12 col-sm-24\">
                         <article class=\"art-content-main\">
                             <i class=\"icon-c $card->imgUrl\"></i>
                             <header>

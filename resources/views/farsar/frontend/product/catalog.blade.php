@@ -35,7 +35,7 @@
                             <article class="art-aside">
                                 <header>
                                     <figure>
-                                        <img src="./assets/images/sample/sidebar.svg" alt="" title="">
+                                        <img src="/{{ env('THEME_NAME') }}/assets/images/sample/sidebar.svg" alt="" title="">
                                     </figure>
                                     <h3 class="f-c-b">
                                         دسته بندی محصولات

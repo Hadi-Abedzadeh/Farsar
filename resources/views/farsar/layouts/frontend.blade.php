@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html dir="rtl" lang="fa-IR" class="no-js">
 
@@ -68,12 +67,24 @@
 
 <body>
 <div class="wrapper" id="main-page">
+<div id="fullmenu">
+    <div class="container">
+        @include(env('THEME_NAME').'.layouts.nav-menu')
+    </div>
+</div>
     <header class="site-header site-header-main site-header-main-single" id="sectionup">
         <figure class="bg-img-header bg-gr-header">
             <img src="/{{env('THEME_NAME')}}/assets/images/sample/bg-header1.png" alt="" title="">
         </figure>
         <div class="container">
             <section class="set-header-top">
+				<article class="art-header-menu">
+					<div class="menuicon">
+					<span></span>
+					<span></span>
+					<span></span>
+					</div>
+				</article>
                 <article class="art-header-right">
                     <figure>
                         <a href="javascript:void(0)" title="farsar">

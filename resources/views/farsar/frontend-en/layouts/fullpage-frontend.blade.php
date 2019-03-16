@@ -38,12 +38,11 @@
     <div class="section header">
         <nav>
             <a class="logo" href="{{ route('frontend') }}"></a>
-            <a class="langchoser" href="{{ change_lang('en') }}">FA</a>
             <div class="langchoser">
 			<a class="currentlang">EN</a>
 			<div class="chooselang">
 			<a href="#" class="lebanon">AR</a>
-			<a href="/lang/fa" class="persian">FA</a>
+			<a href="{{ change_lang('en') }}" class="persian">FA</a>
 			<a href="#" class="russia">RU</a>
 			</div>
 			</div>

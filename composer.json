@@ -14,7 +14,8 @@
         "jminayat/modules-laravel": "^2.0",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.7.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "morilog/jalali": "3.*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

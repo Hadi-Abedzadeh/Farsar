@@ -7,7 +7,7 @@
             <div class="fullproject">
             <div class="fullprojectimg">
                 <img src="{{json_decode($project->imageUrls)->img1}}">
-                <a href="{{ route('frontend.project.show', ['slug' => $project->slug]) }}" class="more">See More</a>
+                <a href="{{ route('frontend.project.show', ['slug' => $project->slug, 'lang' => 'en']) }}" class="more">See More</a>
             </div>
             <div class="fullprojectside">
                 <h3>{{ $project->title }}</h3>

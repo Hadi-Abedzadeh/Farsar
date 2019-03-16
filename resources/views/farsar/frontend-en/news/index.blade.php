@@ -40,7 +40,7 @@
                                     {{ substr(strip_tags($report->body), 0, 100) }}
                                     {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
                                 </p>
-                                <a href="{{ route('frontend.news.index.show', ['slug' => $report->slug ])}}" class="more">See More</a>
+                                <a href="{{ route('frontend.news.index.show', ['slug' => $report->slug, 'lang' => 'en'])}}" class="more">See More</a>
                             </div>
                         </div>
                     @endforeach

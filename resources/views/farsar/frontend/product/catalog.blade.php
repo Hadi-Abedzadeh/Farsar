@@ -24,7 +24,7 @@
                                         <header>
                                             <h3 class="c-h2">{{ $product->title }}</h3>
                                         </header>
-                                        <a class="a-btn-bggr a-btn" href="{{route('frontend.product.show', ['slug' => $product->slug])}}" title="مشاهده محصول">مشاهدهمحصول</a>
+                                        <a class="a-btn-bggr a-btn" href="{{route('frontend.product.show', ['slug' => $product->slug, 'lang'=>'fa'])}}" title="مشاهده محصول">مشاهدهمحصول</a>
                                     </article>
                                 </div>
                             @endforeach
@@ -45,7 +45,7 @@
                                 <ul class="ul-art-aside">
                                     @foreach($get_products_list as $produc)
                                         <li>
-                                            <a href="{{ route('frontend.product.catalog',['slug' => $produc->slug ])}}" class="c86" title="{{ $produc->title }}"> {{ $produc->title }} </a>
+                                            <a href="{{ route('frontend.product.catalog',['slug' => $produc->slug, 'lang'=>'fa' ])}}" class="c86" title="{{ $produc->title }}"> {{ $produc->title }} </a>
                                         </li>
                                     @endforeach
                                 </ul>

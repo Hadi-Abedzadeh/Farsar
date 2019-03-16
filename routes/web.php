@@ -33,8 +33,10 @@ Route::get('/lang/{lang}', function ($lang) {
     return redirect()->back();
 });
 
-Route::get('/', function () {
-    $locale = set_lang();
+Route::get('/{lang?}/', function ($lang = null) {
+    if($lang == null) return redirect('/fa');
+
+    $locale = set_lang($lang);
     $contact = \App\Contact::first();
 
     $news = \Modules\News\Models\News::whereLang($locale)->limit(8)->get();
@@ -68,8 +70,8 @@ Route::get('/backend', 'backend\BackendController@index');
 Route::get('/{lang?}/contact-us', 'frontend\FrontendController@show_contact')->name('contactus');
 Route::get('/{lang?}/about-us', 'frontend\FrontendController@about_us')->name('aboutus');
 Route::get('/faq', 'frontend\FrontendController@faq');
-Route::get('/career', 'frontend\FrontendController@career');
-Route::get('/catalog', 'frontend\FrontendController@catalog')->name('catalog');
+Route::get('/{lang?}/career', 'frontend\FrontendController@career');
+Route::get('/{lang?}/catalog', 'frontend\FrontendController@catalog')->name('catalog');
 
 
 Auth::routes();

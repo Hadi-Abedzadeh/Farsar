@@ -72,13 +72,13 @@
         </figure>
         <div class="container">
             <section class="set-header-top">
-				<article class="art-header-menu">
-					<div class="menuicon">
-					<span></span>
-					<span></span>
-					<span></span>
-					</div>
-				</article>
+                <article class="art-header-menu">
+                    <div class="menuicon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </article>
                 <article class="art-header-right">
                     <figure>
                         <a href="javascript:void(0)" title="farsar">
@@ -87,22 +87,22 @@
                     </figure>
                     <nav class="primary-menu" role="navigation" aria-label="منو اصلی">
                         <ul>
-    <li><a href="http://127.0.0.1:8000" title="خانه">خانه</a></li>
-    <li><a href="http://127.0.0.1:8000/about-us" title="درباره ما">درباره ما</a></li>
-    <li><a href="http://127.0.0.1:8000/news" title="اخبار">اخبار</a></li>
-    <li><a href="http://127.0.0.1:8000/products" title="محصولات">محصولات</a></li>
-    <li><a href="http://127.0.0.1:8000/projects" title="پروژه ها">پروژه ها</a></li>
-    <li><a href="http://127.0.0.1:8000/blog" title="بلاگ">بلاگ</a></li>
-    <li><a href="http://127.0.0.1:8000/catalog" title="کاتالوگ">کاتالوگ</a></li>
-    <li><a href="http://127.0.0.1:8000/contact-us" title="تماس با ما">تماس با ما</a></li>
-</ul>
+                            <li><a href="http://127.0.0.1:8000" title="خانه">خانه</a></li>
+                            <li><a href="http://127.0.0.1:8000/about-us" title="درباره ما">درباره ما</a></li>
+                            <li><a href="http://127.0.0.1:8000/news" title="اخبار">اخبار</a></li>
+                            <li><a href="http://127.0.0.1:8000/products" title="محصولات">محصولات</a></li>
+                            <li><a href="http://127.0.0.1:8000/projects" title="پروژه ها">پروژه ها</a></li>
+                            <li><a href="http://127.0.0.1:8000/blog" title="بلاگ">بلاگ</a></li>
+                            <li><a href="http://127.0.0.1:8000/catalog" title="کاتالوگ">کاتالوگ</a></li>
+                            <li><a href="http://127.0.0.1:8000/contact-us" title="تماس با ما">تماس با ما</a></li>
+                        </ul>
                     </nav>
                 </article>
                 <article class="art-header-left">
                     <i class="i-s icon-Search"></i>
                     <div class="div-lang">
                         <i class="i-w icon-World"></i>
-                        <a href="/lang/en"><span>English</span></a>
+                        <a href="/fa/"><span>English</span></a>
                     </div>
                 </article>
             </section>
@@ -118,7 +118,7 @@
                 <div class="number"><span>۴۰۴</span></div>
                 <div class="title"><p>صفحه مورد نظر شما <span>یافت نشد</span> !</p></div>
                 <div class="search"><input type="search" id="site-search" name="page_search" placeholder="صفحه مورد نظر خود را جست و جو کنید ..."></div>
-                
+
             </section>
         </div>
     </main>

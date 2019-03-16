@@ -15,7 +15,7 @@
 
                 <span>Tags: </span>
                 @foreach($tags as $tag)
-                    <a href="{{ route('tag.show', ['slug' => $tag->slug]) }}">{{$tag->name}}</a>
+                    <a href="{{ route('tag.show', ['slug' => $tag->slug, 'lang' => 'en']) }}">{{$tag->name}}</a>
                     @if(!$loop->last) ,@endif
                 @endforeach
             </div>
@@ -36,7 +36,7 @@
                             {{ strlen(strip_tags($s->body)) > 50 ? "..." : "" }}
                         </p>
                         <div class="newsitemfooter">
-                            <a href="{{ route('frontend.blog.index.slug', ['slug' => $s->slug ])}}" class="more">See More</a>
+                            <a href="{{ route('frontend.blog.index.slug', ['slug' => $s->slug, 'lang'=> 'en'])}}" class="more">See More</a>
                         </div>
                     </div>
                 </div>

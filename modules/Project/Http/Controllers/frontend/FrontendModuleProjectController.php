@@ -13,9 +13,9 @@ class FrontendModuleProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
         $projects = Project::whereLang($locale)->paginate(env('PAGINATE_COUNT'));
 
         if($locale == 'fa'){
@@ -53,11 +53,11 @@ class FrontendModuleProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($lang = null, $slug)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
-        $project = Project::whereSlug($slug)->first();
+        $project = Project::whereSlug($slug)->firstOrFail();
         $related_project = Project::whereLang($locale)->orderBy('id', 'DESC')->limit(3)->get();
 
 

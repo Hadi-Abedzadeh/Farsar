@@ -9,7 +9,9 @@
                         <article class="art-content-about">
                             <div class="div-content-about">
                                 <p class="c-p">
-                                    {!!  $contact->etc !!}
+                                    {!!  $contact->etc !!} <br>
+                                    {!!  json_decode($contact->tel)->tel1 !!} <br>
+                                    {!!  json_decode($contact->email)->email1 !!} <br>
                                     {!!  $contact->social_media !!}
                                 </p>
                             </div>

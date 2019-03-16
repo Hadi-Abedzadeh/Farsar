@@ -11,7 +11,7 @@
                         <h3>{{ $project2->title }}</h3>
                         <div class="projectitemimg">
                             <img src="{{ json_decode($project2->imageUrls)->img1 }}" draggable="false">
-                            <a href="{{ route('frontend.project.show', ['slug' => $project2->slug]) }}" class="getmore">Get
+                            <a href="{{ route('frontend.project.show', ['slug' => $project2->slug, 'lang' => 'en']) }}" class="getmore">Get
                                 Order</a>
                         </div>
                     </div>

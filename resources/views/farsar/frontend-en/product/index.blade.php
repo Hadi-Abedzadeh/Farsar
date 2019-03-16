@@ -24,8 +24,8 @@
                     <h2>Products</h2>
                     <div class="sorter">
                         <div class="sorterheader">Newest</div>
-                        <span>Newest</span>
-                        <span>Oldest</span>
+                        <a href="/en/products/?order=desc"><span>Newest</span></a>
+                        <a href="/en/products/?order=asc"><span>Oldest</span></a>
                     </div>
                 </div>
                 <div class="productitems">
@@ -36,7 +36,7 @@
                                 <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                                 <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                             </div>
-                            <a href="{{ route('frontend.product.show', ['slug' => $product->slug]) }}" class="getmore">Get
+                            <a href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang' =>'en']) }}" class="getmore">Get
                                 Order</a>
                         </div>
                     @endforeach

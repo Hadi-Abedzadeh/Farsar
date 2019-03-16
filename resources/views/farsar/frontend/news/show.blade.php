@@ -27,6 +27,4 @@
     </div>
 @endsection
 
-@section('title')
-    اخبار
-@endsection
+@section('title', $news->title)

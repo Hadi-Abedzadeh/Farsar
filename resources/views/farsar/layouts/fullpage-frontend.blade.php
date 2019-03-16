@@ -65,24 +65,24 @@
 
 <body>
 <div class="wrapper" id="main-page">
-<div id="fullmenu">
-    <div class="container">
-        @include(env('THEME_NAME').'.layouts.nav-menu')
+    <div id="fullmenu">
+        <div class="container">
+            @include(env('THEME_NAME').'.layouts.nav-menu')
+        </div>
     </div>
-</div>
     <header class="site-header site-header-main" id="sectionup">
         <figure class="bg-img-header bg-gr-header">
             <img src="/{{ env('THEME_NAME') }}/assets/images/sample/bg-header1.png" alt="" title="">
         </figure>
         <div class="container">
             <section class="set-header-top">
-				<article class="art-header-menu">
-					<div class="menuicon">
-					<span></span>
-					<span></span>
-					<span></span>
-					</div>
-				</article>
+                <article class="art-header-menu">
+                    <div class="menuicon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </article>
                 <article class="art-header-right">
                     <figure>
                         <a href="javascript:void(0)" title="farsar">
@@ -96,16 +96,17 @@
                 </article>
                 <article class="art-header-left">
                     <i class="i-s icon-Search"></i>
-                    <a href="/lang/en">
-                    <div class="div-lang">
-                        <i class="i-w icon-World"></i>
-                        <span>English</span>
-                    </div></a>
+                    <a href="{{ change_lang('fa') }}">
+                        <div class="div-lang">
+                            <i class="i-w icon-World"></i>
+                            <span>English</span>
+                        </div>
+                    </a>
                 </article>
             </section>
             <section class="sec-header-bottom">
                 {{ create_box(1) }}
-                    
+
                 {{ create_box_first(2) }}
             </section>
         </div>
@@ -113,7 +114,11 @@
             <img src="/{{ env('THEME_NAME') }}/assets/images/sample/bg-header.svg" alt="" title="">
         </figure>
     </header>
-    <div class="search-header"><form action="#"><i class="i-s icon-Search"></i><input type="search" placeholder="عبارت مورد نظر خود را وارد کنید … "></form><span class="close-search"><img src="/{{env('THEME_NAME')}}/assets/images/sample/close-search.svg" alt="" title=""></span></div>
+    <div class="search-header">
+        <form action="#"><i class="i-s icon-Search"></i><input type="search"
+                                                               placeholder="عبارت مورد نظر خود را وارد کنید … "></form>
+        <span class="close-search"><img src="/{{env('THEME_NAME')}}/assets/images/sample/close-search.svg" alt=""
+                                        title=""></span></div>
     <main>
         <div class="main-content">
             <div class="container">
@@ -123,7 +128,7 @@
             </div>
             <section class="sec-about-main">
                 <div class="container">
-                    {{ create_box_third(4) }}  
+                    {{ create_box_third(4) }}
 
                 </div>
                 <article class="art-svg-about-main">
@@ -135,7 +140,7 @@
             <section class="sec-slider-product">
                 <header>
                     <h2 class="c-h2">
-                    محصولات <em class="f-c-b">برتر</em>
+                        محصولات <em class="f-c-b">برتر</em>
                     </h2>
                 </header>
 
@@ -157,7 +162,7 @@
                                                 <h3 class="c-h2">{!! $product->title !!}</h3>
                                             </header>
                                             <a class="a-btn-bggr a-btn"
-                                               href="{{ route('frontend.product.show', ['slug' => $product->slug ])}}"
+                                               href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang'=> 'fa' ])}}"
                                                title="مشاهده محصول">مشاهده محصول</a>
                                         </article>
                                     </div>

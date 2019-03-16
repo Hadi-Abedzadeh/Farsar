@@ -9,7 +9,7 @@
                 </div>
                 <div class="categorylist">
                     @foreach($categories as $category)
-                        <a href="{{ route('category', ['slug'=> $category->slug ])}}">{{ $category->name }}</a>
+                        <a href="{{ route('category', ['slug'=> $category->slug, 'lang' => 'en'])}}">{{ $category->name }}</a>
                     @endforeach
                 </div>
             </div>
@@ -18,8 +18,8 @@
                     <h2>Blog</h2>
                     <div class="sorter">
                         <div class="sorterheader">Newest</div>
-                        <span>Newest</span>
-                        <span>Oldest</span>
+                        <a href="/en/blog/?order=desc"><span>Newest</span></a>
+                        <a href="/en/blog/?order=asc"><span>Oldest</span></a>
                     </div>
                 </div>
                 <div class="blogposts">
@@ -34,7 +34,7 @@
                                     {{ substr(strip_tags($post->body), 0, 100) }}
                                     {{ strlen(strip_tags($post->body)) > 50 ? "..." : "" }}
                                 </p>
-                                <a href="{{ route('frontend.blog.index.slug', ['slug' => $post->slug ])}}" class="more">See More</a>
+                                <a href="{{ route('frontend.blog.index.slug', ['slug' => $post->slug, 'lang' => 'en' ])}}" class="more">See More</a>
                             </div>
                         </div>
                     @endforeach

@@ -26,7 +26,7 @@
                                     {{ substr(strip_tags($report->body), 0, 500) }}
                                     {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
                                 </p>
-                                <a class="a-btn-bggr a-btn a-btn-blog" href="{{ route('frontend.news.index.show', ['slug' => $report->slug ])}}" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+                                <a class="a-btn-bggr a-btn a-btn-blog" href="{{ route('frontend.news.index.show', ['slug' => $report->slug, 'lang' =>'fa' ])}}" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
                             </article>
                         </div>
                     @endforeach
@@ -61,7 +61,7 @@
                                         {{ substr(strip_tags($same_product->body), 0, 200) }}
                                         {{ strlen(strip_tags($same_product->body)) > 200 ? "..." : "" }}
                                     </p>
-                                    <a class="a-btn-bggr a-btn a-btn-blog" href="{{ route('frontend.product.show', ['slug' => $same_product->slug]) }}" title="اطلاعات بیشتر">اطلاعات
+                                    <a class="a-btn-bggr a-btn a-btn-blog" href="{{ route('frontend.product.show', ['slug' => $same_product->slug, 'lang'=>'fa']) }}" title="اطلاعات بیشتر">اطلاعات
                                         بیشتر</a>
                                 </article>
                             </div>

@@ -11,7 +11,7 @@
                         <h3>{{ $same_products->title }}</h3>
                         <div class="projectitemimg">
                             <img src="{!! json_decode($same_products->imageUrls)->img1!!}" draggable="false">
-                            <a href="{{route('frontend.product.show', ['slug'=>$same_products->slug])}}"
+                            <a href="{{route('frontend.product.show', ['slug'=>$same_products->slug, 'lang'=>'en'])}}"
                                class="getmore">Get Order</a>
                         </div>
                     </div>

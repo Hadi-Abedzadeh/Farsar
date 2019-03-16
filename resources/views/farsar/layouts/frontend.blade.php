@@ -53,7 +53,7 @@
     <link rel="index" href="javascript:void(0)" />
     <!-- Site index link -->
 
-    <title>@yield('title') | فرسام </title>
+    <title>@yield('title') | فرسار </title>
     <link rel="stylesheet" href="/{{env('THEME_NAME')}}/assets/css/stylesheet.css" />
     <!--[if lt IE 10]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/2.0.1/flexibility.js"></script>
@@ -99,7 +99,7 @@
                     <i class="i-s icon-Search"></i>
                     <div class="div-lang">
                         <i class="i-w icon-World"></i>
-                        <a href="/lang/en"><span>English</span></a>
+                        <a href="{{ change_lang('fa') }}"><span>English</span></a>
                     </div>
                 </article>
             </section>

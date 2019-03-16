@@ -27,7 +27,7 @@
 	<a class="currentlang">EN</a>
 	<div class="chooselang">
 	<a href="#" class="lebanon">AR</a>
-	<a href="/lang/fa" class="persian">FA</a>
+	<a href="{{ change_lang('en') }}" class="persian">FA</a>
 	<a href="#" class="russia">RU</a>
 	</div>
 	</div>
@@ -38,7 +38,7 @@
     <div class="section header">
         <nav>
             <a class="logo" href="{{ route('frontend') }}"></a>
-            <a class="langchoser" href="/lang/fa">FA</a>
+            <a class="langchoser" href="{{ change_lang('en') }}">FA</a>
             <div class="socialmedias">
                 <a href="#" class="icon googleplus"></a>
                 <a href="#" class="icon telegram"></a>
@@ -61,16 +61,10 @@
                 <h2>Retina Display</h2>
             </div>
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type
-                specimen book. It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was popularised
-                in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker
-                including versions of Lorem Ipsum.
+                {!! \App\About::find(2)->body !!}
+
             </p>
-            <a href="{{ route('aboutus') }}" class="more">See More</a>
+            <a href="{{ route('aboutus', ['lang'=>'en']) }}" class="more">See More</a>
         </div>
     </div>
     <div class="section products">
@@ -85,7 +79,7 @@
                             <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                             <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                         </div>
-                        <a href="{{ route('frontend.product.show', ['slug' => $product->slug]) }}" class="getmore">Get
+                        <a href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang' => 'en']) }}" class="getmore">Get
                             Order</a>
                     </div>
                 @endforeach
@@ -147,7 +141,7 @@
                                 {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
                             </p>
                             <div class="newsitemfooter">
-                                <a href="{{ route('frontend.news.index.show', ['slug'=>$report->slug]) }}" class="more">See
+                                <a href="{{ route('frontend.news.index.show', ['slug'=>$report->slug, 'lang' =>'en']) }}" class="more">See
                                     More</a>
                             </div>
                         </div>

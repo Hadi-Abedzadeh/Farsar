@@ -62,7 +62,7 @@
                                 {{ substr(strip_tags($same_product->body), 0, 200) }}
                                 {{ strlen(strip_tags($same_product->body)) > 200 ? "..." : "" }}
                             </p>
-                            <a class="a-btn-bggr a-btn a-btn-blog" href="{{ route('frontend.product.show', ['slug' => $same_product->slug]) }}" title="اطلاعات بیشتر">اطلاعات
+                            <a class="a-btn-bggr a-btn a-btn-blog" href="{{ route('frontend.product.show', ['slug' => $same_product->slug, 'lang' =>'fa']) }}" title="اطلاعات بیشتر">اطلاعات
                                 بیشتر</a>
                         </article>
                     </div>

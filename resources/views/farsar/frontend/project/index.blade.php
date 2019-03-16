@@ -45,7 +45,7 @@
                                 {{ substr(strip_tags($project->body), 0, 500) }}
                                 {{ strlen(strip_tags($project->body)) > 50 ? "..." : "" }}
                             </P>
-                            <a class="a-btn-bggr a-btn a-btn-bggr-product" href="{{ route('frontend.project.show', ['slug' => $project->slug]) }}" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+                            <a class="a-btn-bggr a-btn a-btn-bggr-product" href="{{ route('frontend.project.show', ['slug' => $project->slug, 'lang' => 'fa']) }}" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
                         </div>
                     </article>
                 @endforeach

@@ -1,7 +1,5 @@
 <?php
 
-
-
 if (!function_exists('set_lang')) {
     function set_lang($lang = null)
     {
@@ -22,7 +20,6 @@ if (!function_exists('set_lang')) {
 //        }
     }
 }
-
 
 if (!function_exists('moduleState')) {
     function moduleState($module_name)
@@ -145,4 +142,29 @@ function sorting(){
     }
 
     return $sort;
+}
+
+
+
+function change_lang($lang){
+
+    switch ($lang) {
+        case 'fa':
+            $select_lang = 'en';
+            break;
+        case 'en':
+            $select_lang = 'fa';
+            break;
+        default :
+            $select_lang = 'fa';
+    }
+
+    $url = Request::url();
+
+    $url = str_replace("/$lang", "/$select_lang", $url );
+
+
+    \Illuminate\Support\Facades\Request::session()->put('lang', $select_lang);
+
+    return $url;
 }

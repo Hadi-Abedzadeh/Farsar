@@ -6,7 +6,6 @@
         <h3>About</h3>
         <p>
             {{ $about->body }}
-
         </p>
     </div>
 </div>
@@ -14,6 +13,4 @@
     @endsection
 
 
-@section('title')
-    About
-@endsection
+@section('title', 'About')

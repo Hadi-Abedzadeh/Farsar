@@ -21,8 +21,8 @@
                             </figure>
                         </div>
                         <div class="content">
-                            <h3 class="c-h2">{{ $product->title }}</em></h3>
-                            <a class="c-btn" href="{{route('frontend.product.catalog', ['slug' => $product->slug])}}" title="مشاهده محصول">مشاهده محصول</a>
+                            <h3 class="c-h2">{{ $product->title }}</h3>
+                            <a class="c-btn" href="{{route('frontend.product.catalog', ['slug' => $product->slug, 'lang'=>'fa'])}}" title="مشاهده محصول">مشاهده محصول</a>
                         </div>
                     </article>
                 </div>

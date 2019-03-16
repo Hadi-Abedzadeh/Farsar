@@ -18,10 +18,10 @@
                                 <div class="bdi-down bdi-bg-c">
                                     <i class="icon-layers"></i>
                                 </div>
-                                <h3 class="c-h2">{{ $catalog->title_fa }}</h3>
+                                <h3 class="c-h2">{{ $catalog->title }}</h3>
                                 <bdi class="bdi-bookmark f-c-b">
                                     <i class="icon-bookmark">
-                                        <em>فارسی</em>
+                                        <em>  @if($catalog->lang == 'fa') فارسی @endif </em>
                                     </i>
                                 </bdi>
                             </article>

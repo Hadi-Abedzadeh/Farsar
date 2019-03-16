@@ -39,9 +39,10 @@ Route::get('/{lang?}/blog', 'frontend\FrontendModuleBlogController@index')->name
 Route::get('/{lang?}/blog/{postSlug}', 'frontend\FrontendModuleBlogController@show')->name('frontend.blog.index.slug');
 Route::get('/{lang?}/blog/category/{categorySlug}', 'frontend\FrontendModuleBlogController@category')->name('category');
 
-Route::get('/tags', 'frontend\TagController@index')->name('tag');
-Route::get('/tag/{tagSlug}', 'frontend\TagController@show')->name('tag.show');
+Route::get('/{lang?}/tags', 'frontend\TagController@index')->name('tag');
+Route::get('/{lang?}/tag/{tagSlug}', 'frontend\TagController@show')->name('tag.show');
 
+Route::post('/{lang?}/comment', 'frontend\FrontendModuleBlogController@store_comment')->name('blog.comment');
 
 //Route::namespace('frontend')->prefix('blog')->group(function () {
 //    Route::resource('/', 'BlogController');

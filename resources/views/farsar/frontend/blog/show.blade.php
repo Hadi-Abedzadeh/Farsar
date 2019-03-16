@@ -32,7 +32,7 @@
                                     </header>
                                     <ul>
                                         @foreach($tags as $tag)
-                                            <a href="{{ route('tag.show', ['slug' => $tag->slug]) }}">{{$tag->name}}</a>
+                                            <a href="{{ route('tag.show', ['slug' => $tag->slug, 'lang'=>'fa']) }}">{{$tag->name}}</a>
                                             @if(!$loop->last) ,@endif
                                         @endforeach
                                     </ul>
@@ -54,7 +54,7 @@
                                 <header>
                                     <h5 class="f-c-b"> {{ $comment->client_name }} </h5>
                                     <img src="/{{env('THEME_NAME')}}/assets/images/sample/stars.png" alt="" title="">
-                                    <em class="c-h2">{{ $comment->created_at }}</em>
+                                    <em class="c-h2">{{ jdate($comment->created_at)->format('%B %d، %Y') }}</em>
                                 </header>
                                 <p class="c-p">
                                     {{ $comment->body }}
@@ -64,11 +64,13 @@
                     </ul>
                 </article>
                 <footer>
-                    <form action="" method="post">
-                        <input type="text" placeholder="نام و نام خانوادگی">
-                        <input type="text" placeholder="ایمیل شما">
+                    <form action="{{ route('blog.comment', ['lang' => Request::segment(1)]) }}" method="post">
+                        {{ @csrf_field() }}
+                        <input type="text" name="client_name" placeholder="نام و نام خانوادگی">
+                        <input type="text" name="client_email" placeholder="ایمیل شما">
+                        <input type="hidden" name="post_id" value="{{ $post->id }}">
                         <button class="a-btn-bgc">ثبت نظر</button>
-                        <textarea name="" id="" cols="30" rows="5" placeholder="متن خود را وارد کنید …"></textarea>
+                        <textarea id="" name="body" cols="30" rows="5" placeholder="متن خود را وارد کنید …"></textarea>
                     </form>
                 </footer>
             </section>

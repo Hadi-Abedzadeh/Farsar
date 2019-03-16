@@ -16,7 +16,7 @@ class Helper
                         <h1>$card->title</h1>
                     </header>
                     <p>$card->body</p>
-                    <a class='a-btn-bgc a-btn' href='".route('aboutus')."' title=\"درباره ما\">درباره ما</a>
+                    <a class='a-btn-bgc a-btn' href='".route('aboutus',['lang' => 'fa'])."' title=\"درباره ما\">درباره ما</a>
                 </article>";
         }
     }
@@ -31,7 +31,7 @@ class Helper
                         <h2 class='c-h2'>$card->title</h2>
                     </header>
                     <p class='c-p'>$card->body</p>
-                    <a class='a-btn-bggr a-btn' href='".route('aboutus') ."'   title='اطلاعات بیشتر'> اطلاعات بیشتر </a> 
+                    <a class='a-btn-bggr a-btn' href='".route('aboutus',['lang' => 'fa']) ."'   title='اطلاعات بیشتر'> اطلاعات بیشتر </a> 
                 </article>";
         }
     }
@@ -65,7 +65,7 @@ class Helper
                             </h2>
                         </header>
                         <p class=\"c-p\">$card->body</p>
-                        <a class='a-btn-bggr a-btn' href='". route('frontend.project.index')."' title='اطلاعات بیشتر'>
+                        <a class='a-btn-bggr a-btn' href='". route('frontend.project.index',['lang' => 'fa'])."' title='اطلاعات بیشتر'>
                         اطلاعات بیشتر
                         </a>
                     </article>";

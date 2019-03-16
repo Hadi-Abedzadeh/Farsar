@@ -12,5 +12,5 @@ Route::prefix('backend')->middleware('auth')->group(function () {
     Route::post('/projects/store', 'backend\BackendModuleProjectController@store')->name('backend.project.store');
 });
 
-Route::get('/projects', 'frontend\FrontendModuleProjectController@index')->name('frontend.project.index');
-Route::get('/project/{slug}', 'frontend\FrontendModuleProjectController@show')->name('frontend.project.show');
+Route::get('/{lang?}/projects', 'frontend\FrontendModuleProjectController@index')->name('frontend.project.index');
+Route::get('/{lang?}/project/{slug}', 'frontend\FrontendModuleProjectController@show')->name('frontend.project.show');

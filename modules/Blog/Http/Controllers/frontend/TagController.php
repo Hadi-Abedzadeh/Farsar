@@ -10,14 +10,14 @@ use Modules\Product\Models\Product_list;
 
 class TagController extends Controller
 {
-    public function index()
+    public function index($lang = null)
     {
         return Post::find(2)->tags()->get();
     }
 
-    public function show($tag)
+    public function show($lang = null, $tag)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
         $blog_posts = $tag->posts()->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
 

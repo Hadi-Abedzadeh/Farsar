@@ -121,8 +121,6 @@
         <div class="projectgallery">
 
             @foreach($projects as $project)
-
-
                 <div class="innergallery gallery-{{$loop->iteration}} @if($loop->first)active @endif"
                      data-all="{{$projects->count()}}" data-active="1">
                     @foreach(json_decode($project->imageUrls, true) as $img)

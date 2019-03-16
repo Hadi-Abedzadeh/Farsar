@@ -65,8 +65,8 @@ Route::prefix('backend')->middleware('auth')->group(function () {
 
 
 Route::get('/backend', 'backend\BackendController@index');
-Route::get('/contact-us', 'frontend\FrontendController@show_contact')->name('contactus');
-Route::get('/about-us', 'frontend\FrontendController@about_us')->name('aboutus');
+Route::get('/{lang?}/contact-us', 'frontend\FrontendController@show_contact')->name('contactus');
+Route::get('/{lang?}/about-us', 'frontend\FrontendController@about_us')->name('aboutus');
 Route::get('/faq', 'frontend\FrontendController@faq');
 Route::get('/career', 'frontend\FrontendController@career');
 Route::get('/catalog', 'frontend\FrontendController@catalog')->name('catalog');

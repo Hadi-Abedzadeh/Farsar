@@ -26,7 +26,7 @@
                             {{ substr(strip_tags($post->body), 0, 500) }}
                             {{ strlen(strip_tags($post->body)) > 50 ? "..." : "" }}
                         </p>
-                        <a class="a-btn-bggr a-btn a-btn-blog" href="{{ route('frontend.blog.index.slug', ['slug' => $post->slug ])}}" title="اطلاعات بیشتر">اطلاعات
+                        <a class="a-btn-bggr a-btn a-btn-blog" href="{{ route('frontend.blog.index.slug', ['slug' => $post->slug, 'lang' => 'fa' ])}}" title="اطلاعات بیشتر">اطلاعات
                             بیشتر</a>
                     </article>
                 </div>

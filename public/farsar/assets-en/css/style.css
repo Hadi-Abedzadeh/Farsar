@@ -81,10 +81,10 @@ html.fp-enabled,html.areahtml,html.responsveevy{opacity:1;}
 .projectinfo .inner.active{right:0;opacity:1;}
 .projectinfo .container{width:calc(100% - 140px);margin-left:30px;}
 .projectgallery{background:#ddd;position:absolute;left:0;top:0;height:100%;width:55%;}
-.projectgallery .innergallery{transition:.8s ease-in-out;position:absolute;top:0;right:-100%;width:100%;height:100%;}
-.projectgallery .innergallery.active{right:0;}
+.projectgallery .innergallery{transition:.8s ease-in-out;position:absolute;opacity:0;top:0;right:-100%;width:100%;height:100%;}
+.projectgallery .innergallery.active{right:0;opacity:1;}
 .projectgallery .innergallery img{transition:.8s ease-in-out;opacity:0;position:absolute;top:0;right:-100%;min-width:100%;width:auto;height:100%;}
-.projectgallery .innergallery img.active{right:0;opacity:1;}
+.projectgallery .innergallery img.active{right:-50%;left:-50%;margin:auto;opacity:1;}
 .section.projects{overflow:hidden;}
 .section.projects h2{display:block;font-size:47px;font-weight:600;color:#141519;display:flex;margin-bottom:0;}
 .section.projects h2 .more{background:#fff;background:#0f2699;margin-left:0;margin-top:20px;position:relative;right:0;display:inline-block;}
@@ -455,4 +455,7 @@ body.menuactive #fullmenu{right:0;top:80px;}
 .section.products h2,.footer h2,.section.news h2,.section.projects h2{flex-wrap:wrap;text-align:center;width:100%;justify-content:center;}
 .section.products h2 .more{margin-left:0;}
 .section.projects h2 .more{margin-top:0;}
+.owl-carousel{width:calc(100% - 10px);}
+.owl-nav .owl-prev{right:-35px;}
+.owl-nav .owl-next{left:-35px;}
 }

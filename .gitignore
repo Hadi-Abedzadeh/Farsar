@@ -19,3 +19,4 @@ config/database.php
 Farsar.zip
 Farsar23Esfand.zip
 *.zip
+config/database.php

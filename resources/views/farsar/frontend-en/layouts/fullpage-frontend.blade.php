@@ -39,6 +39,14 @@
         <nav>
             <a class="logo" href="{{ route('frontend') }}"></a>
             <a class="langchoser" href="{{ change_lang('en') }}">FA</a>
+            <div class="langchoser">
+			<a class="currentlang">EN</a>
+			<div class="chooselang">
+			<a href="#" class="lebanon">AR</a>
+			<a href="/lang/fa" class="persian">FA</a>
+			<a href="#" class="russia">RU</a>
+			</div>
+			</div>
             <div class="socialmedias">
                 <a href="#" class="icon googleplus"></a>
                 <a href="#" class="icon telegram"></a>

@@ -12,9 +12,9 @@ use Modules\Faq\Models\Faq;
 
 class FrontendController extends Controller
 {
-    public function show_contact()
+    public function show_contact($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
         if($locale == 'fa'){
             $contact = Contact::find(1);
             return view(env('THEME_NAME').'.frontend.contact.index', compact('contact'));
@@ -24,9 +24,10 @@ class FrontendController extends Controller
         }
     }
 
-    public function about_us()
+    public function about_us($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
+
         if($locale == 'fa'){
             $about = About::find(1);
             return view(env('THEME_NAME').'.frontend.about.index', compact('about'));

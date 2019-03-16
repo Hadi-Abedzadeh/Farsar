@@ -15,6 +15,5 @@ yarn-error.log
 .DS_Store
 .idea
 .idea/*
-Farsar.zip
 config/database.php
-Farsar.zip
+*.zip

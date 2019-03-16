@@ -12,9 +12,9 @@ use Modules\Product\Models\Product_list;
 
 class FrontendModuleBlogController extends Controller
 {
-    public function index()
+    public function index($lang = null)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
         $blog_posts = Post::whereActive(1)->whereLang($locale)->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
         $product_list = Product_list::whereLang($locale)->orderBy('id', 'DESC')->limit(8)->get();
@@ -27,10 +27,9 @@ class FrontendModuleBlogController extends Controller
         }
     }
 
-
-    public function show($post)
+    public function show($lang = null, $post)
     {
-        $locale = set_lang();
+        $locale = set_lang($lang);
 
         $array = array();
         if (isset($post->categories[0]->pivot)) {

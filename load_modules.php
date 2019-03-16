@@ -1,16 +1,28 @@
 <?php
 
 
+
 if (!function_exists('set_lang')) {
-    function set_lang()
+    function set_lang($lang = null)
     {
-        if (session('lang') == true) {
-            return session('lang');
-        } else {
-            return 'en';
+        switch ($lang){
+            case 'fa': $set_lang = 'fa'; break;
+            case 'en': $set_lang = 'en'; break;
+
+            case null: $set_lang = 'fa'; break;
+            default: return redirect('/fa');
         }
+
+        return $set_lang;
+
+//        if (session('lang') == true) {
+//            return session('lang');
+//        } else {
+//            return 'en';
+//        }
     }
 }
+
 
 if (!function_exists('moduleState')) {
     function moduleState($module_name)

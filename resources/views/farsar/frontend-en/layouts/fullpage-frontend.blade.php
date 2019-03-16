@@ -111,14 +111,15 @@
             @foreach($projects as $project)
 
 
-                    <div class="innergallery gallery-{{$loop->iteration}} active" data-all="{{$projects->count()}}" data-active="1">
-                @foreach(json_decode($project->imageUrls, true) as $img)
-                    <img src="{{ $img }}" class="galleryimg-1 active">
-                    @if($loop->iteration > 2)
-                        @break
-                            @endif
-                @endforeach
-            </div>
+                <div class="innergallery gallery-{{$loop->iteration}} @if($loop->first)active @endif"
+                     data-all="{{$projects->count()}}" data-active="1">
+                    @foreach(json_decode($project->imageUrls, true) as $img)
+                        <img src="{{ $img }}" class="galleryimg-{{$loop->iteration}} @if($loop->first)active @endif">
+                        @if($loop->iteration > 2)
+                            @break
+                        @endif
+                    @endforeach
+                </div>
             @endforeach
 
             <div class="projectcontroller">

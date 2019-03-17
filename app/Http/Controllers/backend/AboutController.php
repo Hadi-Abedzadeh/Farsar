@@ -15,7 +15,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('default.about-us.backend.index');
+        return view(env('BACKEND_THEME_NAME').'.about-us.index');
     }
 
     /**

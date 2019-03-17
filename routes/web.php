@@ -15,6 +15,8 @@
 app()->setLocale('en');
 require_once(base_path('load_modules.php'));
 
+Auth::routes();
+
 Route::get('/lang/{lang}', function ($lang) {
 
     switch ($lang) {
@@ -32,6 +34,7 @@ Route::get('/lang/{lang}', function ($lang) {
 
     return redirect()->back();
 });
+
 
 Route::get('/{lang?}/', function ($lang = null) {
     if($lang == null) return redirect('/fa');
@@ -52,7 +55,7 @@ Route::get('/{lang?}/', function ($lang = null) {
 
 })->name('frontend');
 
-Route::prefix('backend')->middleware('auth')->group(function () {
+Route::prefix('/backend')->middleware('auth')->group(function () {
     Route::resource('/contact-us', 'backend\BackendContactController');
 //    Route::post('/contact-us/update', 'backend\BackendController@contact_update')->name('backend.contact.update');
 
@@ -66,7 +69,7 @@ Route::prefix('backend')->middleware('auth')->group(function () {
 });
 
 
-Route::get('/backend', 'backend\BackendController@index');
+Route::get('/auth/backend', 'backend\BackendController@index')->middleware('auth');
 Route::get('/{lang?}/contact-us', 'frontend\FrontendController@show_contact')->name('contactus');
 Route::get('/{lang?}/about-us', 'frontend\FrontendController@about_us')->name('aboutus');
 Route::get('/faq', 'frontend\FrontendController@faq');
@@ -74,7 +77,6 @@ Route::get('/{lang?}/career', 'frontend\FrontendController@career');
 Route::get('/{lang?}/catalog', 'frontend\FrontendController@catalog')->name('catalog');
 
 
-Auth::routes();
 
 
 //Route::get('/home', 'HomeController@index')->name('home');

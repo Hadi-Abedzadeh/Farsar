@@ -37,7 +37,7 @@ class BackendModuleFaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

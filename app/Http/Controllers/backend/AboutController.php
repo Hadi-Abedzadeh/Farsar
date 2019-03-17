@@ -15,7 +15,10 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view(env('BACKEND_THEME_NAME').'.about-us.index');
+        $fa = About::find(1);
+        $en = About::find(2);
+
+        return view(env('BACKEND_THEME_NAME').'.about-us.index', compact('fa', 'en'));
     }
 
     /**
@@ -36,12 +39,12 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-
         $valid_data = $request->validate([
             'body' => 'required',
+            'id' => 'required',
         ]);
 
-        About::find(1)->update($valid_data);
+        About::find($valid_data['id'])->update($valid_data);
 
         flash('About-us updated')->success();
         return redirect()->back();

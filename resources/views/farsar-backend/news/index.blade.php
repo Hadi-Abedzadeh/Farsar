@@ -11,25 +11,27 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($blog_posts as $post)
+            @foreach($news as $report)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>
-                        {{ substr(strip_tags($post->title), 0, 100) }}
-                        {{ strlen(strip_tags($post->title)) > 50 ? "..." : "" }}
+                        {{ substr(strip_tags($report->title), 0, 100) }}
+                        {{ strlen(strip_tags($report->title)) > 50 ? "..." : "" }}
+
                     </td>
                     <td>
-                        <img src="{{ $post->imageUrl }}" height="50px"></td>
+                        <img src="{{ $report->imageUrl }}" height="50px"></td>
                     <td>
-                        {{ substr(strip_tags($post->body), 0, 100) }}
-                        {{ strlen(strip_tags($post->body)) > 50 ? "..." : "" }}
+                        {{ substr(strip_tags($report->body), 0, 100) }}
+                        {{ strlen(strip_tags($report->body)) > 50 ? "..." : "" }}
                     </td>
                 </tr>
-                @endforeach
+            @endforeach
             </tbody>
         </table>
-        {{ $blog_posts->links() }}
-        <a href="{{ route('backend.blog.create') }}" class="jadid"></a>
+        {{ $news->links() }}
+        <a href="{{ route('backend.news.index') }}" class="jadid"></a>
     </div>
-
 @endsection
+
+@section('title', 'اخبار')

@@ -3,12 +3,19 @@
 if (!function_exists('set_lang')) {
     function set_lang($lang = null)
     {
-        switch ($lang){
-            case 'fa': $set_lang = 'fa'; break;
-            case 'en': $set_lang = 'en'; break;
+        switch ($lang) {
+            case 'fa':
+                $set_lang = 'fa';
+                break;
+            case 'en':
+                $set_lang = 'en';
+                break;
 
-            case null: $set_lang = 'fa'; break;
-            default: return redirect('/fa');
+            case null:
+                $set_lang = 'fa';
+                break;
+            default:
+                return redirect('/fa');
         }
 
         return $set_lang;
@@ -125,7 +132,8 @@ if (!function_exists('active_nav')) {
     }
 }
 
-function sorting(){
+function sorting()
+{
     $order = (request()->input('order')) ? request()->input('order') : 'desc';
     $order = strtoupper($order);
 
@@ -145,9 +153,8 @@ function sorting(){
 }
 
 
-
-function change_lang($lang){
-
+function change_lang($lang)
+{
     switch ($lang) {
         case 'fa':
             $select_lang = 'en';
@@ -159,9 +166,9 @@ function change_lang($lang){
             $select_lang = 'fa';
     }
 
-    $url = Request::url();
-
-    $url = str_replace("/$lang", "/$select_lang", $url );
+//    $url = Request::url();
+    $url = $_SERVER['REQUEST_URI'];
+    return $url = str_replace("/$lang", "/$select_lang", $url);
 
     \Illuminate\Support\Facades\Request::session()->put('lang', $select_lang);
 

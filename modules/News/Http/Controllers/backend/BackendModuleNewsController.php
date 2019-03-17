@@ -18,8 +18,8 @@ class BackendModuleNewsController extends Controller
     {
         $locale = set_lang();
 
-        $news = News::paginate(env('PAGINATE_COUNT_ADMIN'));
-        return view('default.news.backend.index', compact('news'));
+        $news = News::orderBy('id', sorting())->paginate(env('PAGINATE_COUNT_ADMIN'));
+        return view(env('BACKEND_THEME_NAME').'.news.index', compact('news'));
     }
 
     /**
@@ -29,7 +29,7 @@ class BackendModuleNewsController extends Controller
      */
     public function create()
     {
-        return view('default.news.backend.create');
+        return view(env('BACKEND_THEME_NAME').'.news.create');
     }
 
     /**
@@ -43,6 +43,7 @@ class BackendModuleNewsController extends Controller
         $valid_data = $request->validate([
             'title' => 'required',
             'body' => 'required',
+            'lang' => 'required',
             'imageUrl' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 

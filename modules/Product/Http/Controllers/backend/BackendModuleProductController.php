@@ -4,6 +4,8 @@ namespace Modules\Product\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Modules\Product\Models\Product;
+use Modules\Product\Models\Product_list;
 
 class BackendModuleProductController extends Controller
 {
@@ -14,7 +16,8 @@ class BackendModuleProductController extends Controller
      */
     public function index()
     {
-        return "a";
+        $products = Product::orderBy('id', sorting())->paginate(env('PAGINATE_COUNT_ADMIN'));
+        return view(env('BACKEND_THEME_NAME').'.product.index', compact('products'));
     }
 
     /**
@@ -22,9 +25,9 @@ class BackendModuleProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view(env('BACKEND_THEME_NAME').'.product.create');
     }
 
     /**
@@ -82,4 +85,33 @@ class BackendModuleProductController extends Controller
     {
         //
     }
+
+    public function lists()
+    {
+        $product_list = Product_list::orderBy('id', sorting())->paginate(env('PAGINATE_COUNT_ADMIN'));
+        return view(env('BACKEND_THEME_NAME').'.product.lists', compact('product_list'));
+    }
+
+    public function lists_create()
+    {
+        $titles = Product::all();
+        return view(env('BACKEND_THEME_NAME').'.product.lists_create', compact('titles'));
+    }
+
+    public function lists_create_store(Request $request)
+    {
+
+        $valid_data = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'lang' => 'required',
+            'imageUrls' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_id' => 'required',
+            'code' => 'required',
+        ]);
+
+        Product_list::create($valid_data);
+        return redirect()->back();
+    }
+
 }

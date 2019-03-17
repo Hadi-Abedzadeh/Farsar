@@ -15,10 +15,10 @@ class BackendContactController extends Controller
      */
     public function index()
     {
-        $contact = Contact::find(1);
-        $social = json_decode($contact->social);
+        $en = Contact::find(1);
+        $fa = Contact::find(2);
 
-        return view('default.contact-us.backend.index', compact('contact', 'social'));
+        return view(env('BACKEND_THEME_NAME').'.contact-us.index', compact('fa', 'en'));
 
     }
 
@@ -40,7 +40,7 @@ class BackendContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -75,26 +75,34 @@ class BackendContactController extends Controller
     public function update(Request $request, $id)
     {
 
+
         $valid_data = $request->validate([
-            'id'           => 'required',
+            'id'           => 'nullable',
             'map_location' => 'nullable',
             'social_media' => 'nullable',
             'etc' => 'nullable',
-
+            'address' => 'nullable',
+            'tel' => 'nullable',
+            'email' => 'nullable'
         ]);
 
 
+        $request->input('facebook')  ? $social_media['facebook']  = $request->input('facebook') : '';
+        $request->input('instagram') ? $social_media['instagram'] = $request->input('instagram') : '';
+        $request->input('twitter')   ? $social_media['twitter']   = $request->input('twitter') : '';
 
-        $request->input('facebook')  ? $social['facebook']  = $request->input('facebook') : '';
-        $request->input('instagram') ? $social['instagram'] = $request->input('instagram') : '';
-        $request->input('twitter')   ? $social['twitter']   = $request->input('twitter') : '';
-
-        if(!isset($social)){
-            $social = '';
+        if(!isset($social_media)){
+            $social_media = '';
         }
 
+        Contact::find($valid_data['id'])->update([
+            'address'      => json_encode($valid_data['address']),
+//            'social_media' => json_encode($valid_data['social_media']),
+            'map_location' => $valid_data['map_location'],
+            'email' => json_encode($valid_data['email']),
+            'tel' => json_encode($valid_data['tel']),
 
-        Contact::find($valid_data['id'])->update(array_merge($valid_data, array('social' => json_encode($social))));
+        ]);
 
         flash('Update contacts')->success();
         return redirect()->back();

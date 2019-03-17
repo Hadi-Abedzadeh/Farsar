@@ -20,7 +20,7 @@ class BackendModuleBlogController extends Controller
      */
     public function index()
     {
-        $blog_posts = Post::orderBy('id', 'DESC')->paginate(5);
+        $blog_posts = Post::orderBy('id', 'DESC')->paginate(env('PAGINATE_COUNT_ADMIN'));
         return view(env('BACKEND_THEME_NAME').'.blog.posts.index', compact('blog_posts'));
     }
 
@@ -32,7 +32,7 @@ class BackendModuleBlogController extends Controller
     public function create()
     {
         $categories = Category::pluck('name', 'id');
-        return view('default.blog.backend.posts.create', compact('categories'));
+        return view(env('BACKEND_THEME_NAME').'.blog.posts.create', compact('categories'));
     }
 
     /**
@@ -47,6 +47,7 @@ class BackendModuleBlogController extends Controller
             'title' => 'required',
             'body' => 'required',
             'category' => 'required',
+            'lang' => 'required',
             'imageUrl' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -73,7 +74,7 @@ class BackendModuleBlogController extends Controller
         $post = auth()
             ->user()
             ->posts()
-            ->create(array_merge(request(['title', 'body']), array('slug' => $slug, 'imageUrl' => $imagePath)));
+            ->create(array_merge(request(['title', 'body','lang']), array('slug' => $slug, 'imageUrl' => $imagePath)));
 
         $post->categories()->attach(request('category'));
 

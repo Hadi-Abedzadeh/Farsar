@@ -11,25 +11,28 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($blog_posts as $post)
+
+            @foreach($projects as $project)
+
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>
-                        {{ substr(strip_tags($post->title), 0, 100) }}
-                        {{ strlen(strip_tags($post->title)) > 50 ? "..." : "" }}
+                        {{ substr(strip_tags($project->title), 0, 100) }}
+                        {{ strlen(strip_tags($project->title)) > 50 ? "..." : "" }}
                     </td>
                     <td>
-                        <img src="{{ $post->imageUrl }}" height="50px"></td>
+                        <img src="{{ json_decode($project->imageUrls)->img1 }}" height="50px"></td>
                     <td>
-                        {{ substr(strip_tags($post->body), 0, 100) }}
-                        {{ strlen(strip_tags($post->body)) > 50 ? "..." : "" }}
+                        {{ substr(strip_tags($project->body), 0, 100) }}
+                        {{ strlen(strip_tags($project->body)) > 50 ? "..." : "" }}
                     </td>
                 </tr>
-                @endforeach
+            @endforeach
             </tbody>
         </table>
-        {{ $blog_posts->links() }}
-        <a href="{{ route('backend.blog.create') }}" class="jadid"></a>
+        {{ $projects->links() }}
+        <a href="#" class="jadid"></a>
     </div>
-
 @endsection
+
+@section('title', 'پروژه ها')

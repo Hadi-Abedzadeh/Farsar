@@ -10,10 +10,11 @@
             <div class="form-group">
                 <label for="body">درباره ما</label>
                 <input type="hidden" name="id" value="1">
-                <textarea class="form-control" name="body" id="body" placeholder="body"></textarea>
+                <textarea class="form-control" name="body" id="body" placeholder="body">{{ $fa->body }}</textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+            {!! ckeditor('aboutus', 'bodya')  !!}
 
         </form>
     </div>
@@ -24,11 +25,11 @@
             <div class="form-group">
                 <label for="body">درباره ما</label>
                 <input type="hidden" name="id" value="2">
-                <textarea class="form-control" name="bodya" id="bodya" placeholder="body"></textarea>
+                <textarea class="form-control" name="body" id="body" placeholder="body">{{ $en->body }}</textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+            {!! ckeditor('aboutus', 'body')  !!}
         </form>
-        {!! ckeditor('aboutus', 'bodya')  !!}
     </div>
 @endsection

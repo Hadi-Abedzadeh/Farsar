@@ -16,7 +16,7 @@ class FAQController extends Controller
     public function index()
     {
         $faq = Faq::all();
-        return view('default.faq.backend.index', compact('faq'));
+        return view(env('BACKEND_THEME_NAME').'.faq.index', compact('faq'));
     }
 
     /**
@@ -26,7 +26,7 @@ class FAQController extends Controller
      */
     public function create()
     {
-        return view('default.faq.backend.create');
+        return view(env('BACKEND_THEME_NAME').'.faq.create');
     }
 
     /**

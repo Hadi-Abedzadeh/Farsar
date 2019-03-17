@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $guarded = [];
+
     public function products_lists()
     {
         return $this->belongsTo(Product_list::class);
-
     }
 
 

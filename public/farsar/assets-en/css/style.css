@@ -32,8 +32,11 @@ html.fp-enabled,html.areahtml,html.responsveevy{opacity:1;}
 .header h1 span{display:block;font-size:70px;color:#0f2699;}
 #menuactiver{cursor:pointer;background:rgba(15,38,153,.5);transition:.3s;height:100%;width:80px;top:0;right:0;position:fixed;z-index:4;display:flex;justify-content:center;align-content:center;flex-direction:column;}
 #menuactiver .menuicon{width:30px;height:23px;direction:rtl;display:flex;justify-content:space-between;align-content:center;flex-direction:column;margin:auto;}
-#menuactiver .menuicon span{transition:.65s;display:block;width:100%;height:2px;border-radius:50px;background:#fff;}
+#menuactiver .menuicon span{transition:.3s;display:block;width:100%;height:2px;border-radius:50px;background:#fff;}
 #menuactiver h1{display:none;}
+.menuactive .menuicon span:nth-child(1){transform:translateY(11px) rotateZ(45deg);}
+.menuactive .menuicon span:nth-child(2){transform:scaleX(0);}
+.menuactive .menuicon span:nth-child(3){transform:translateY(-10px) rotateZ(-45deg);}
 .scrolldown{width:70px;margin:auto;position:absolute;z-index:1;bottom:10px;right:0;left:0;}
 .scrolldown .mouse{height:100px;width:6px;background:#000;margin:auto;margin-bottom:15px;}
 .scrolldown .mouse:after{animation:2s mousescroll ease-out infinite;content:'';position:absolute;top:0;width:20px;height:40px;top:15px;right:0;left:0;margin:auto;background:#ffff19;}
@@ -81,10 +84,10 @@ html.fp-enabled,html.areahtml,html.responsveevy{opacity:1;}
 .projectinfo .inner.active{right:0;opacity:1;}
 .projectinfo .container{width:calc(100% - 140px);margin-left:30px;}
 .projectgallery{background:#ddd;position:absolute;left:0;top:0;height:100%;width:55%;}
-.projectgallery .innergallery{transition:.8s ease-in-out;position:absolute;top:0;right:-100%;width:100%;height:100%;}
-.projectgallery .innergallery.active{right:0;}
+.projectgallery .innergallery{transition:.8s ease-in-out;position:absolute;opacity:0;top:0;right:-100%;width:100%;height:100%;}
+.projectgallery .innergallery.active{right:0;opacity:1;}
 .projectgallery .innergallery img{transition:.8s ease-in-out;opacity:0;position:absolute;top:0;right:-100%;min-width:100%;width:auto;height:100%;}
-.projectgallery .innergallery img.active{right:0;opacity:1;}
+.projectgallery .innergallery img.active{right:-50%;left:-50%;margin:auto;opacity:1;}
 .section.projects{overflow:hidden;}
 .section.projects h2{display:block;font-size:47px;font-weight:600;color:#141519;display:flex;margin-bottom:0;}
 .section.projects h2 .more{background:#fff;background:#0f2699;margin-left:0;margin-top:20px;position:relative;right:0;display:inline-block;}
@@ -455,4 +458,10 @@ body.menuactive #fullmenu{right:0;top:80px;}
 .section.products h2,.footer h2,.section.news h2,.section.projects h2{flex-wrap:wrap;text-align:center;width:100%;justify-content:center;}
 .section.products h2 .more{margin-left:0;}
 .section.projects h2 .more{margin-top:0;}
+.owl-carousel{width:calc(100% - 10px);}
+.owl-nav .owl-prev{right:-35px;}
+.owl-nav .owl-next{left:-35px;}
+.areaheader{justify-content:center;flex-wrap:wrap;margin-bottom:50px;}
+.innerarea h2{margin-bottom:10px;flex:1 0 100%;text-align:center;justify-content:center;}
+.areaheader .sorter{position:relative;}
 }

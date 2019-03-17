@@ -1,13 +1,6 @@
 @extends(env('THEME_NAME').'.frontend-en.layouts.frontend')
 @section('content')
     <div class="container">
-        <div class="gallerysliderarea owl-carousel">
-            @foreach($products as $product)
-                <div class="galleryslider">
-                    <img src="{{ json_decode($product->imageUrls)->img1 }}">
-                </div>
-            @endforeach
-        </div>
         <div class="innerarea">
             {{--<div class="category">--}}
             {{--<div class="areaheader">--}}

@@ -2376,6 +2376,8 @@ html.fullpagescreen body.menuactive .set-header-top{padding-right: 5%;padding-le
         padding: 2.5rem 0 3.4rem 0;
     }
 
+    .sec-header-bottom{margin-top: 0;}
+
     .set-header-top>article {
         margin: 0 0 1.5rem 0;
         justify-content: center;

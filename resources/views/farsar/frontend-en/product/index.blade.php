@@ -10,14 +10,14 @@
         </div>
         <div class="innerarea">
             {{--<div class="category">--}}
-                {{--<div class="areaheader">--}}
-                    {{--<h2>Categorys</h2>--}}
-                {{--</div>--}}
-                {{--<div class="categorylist">--}}
-                    {{--@foreach($product_category as $producta)--}}
-                        {{--<a href="{{route('frontend.product.catalog', ['slug'=>$producta->slug])}}">{{$producta->title}}</a>--}}
-                    {{--@endforeach--}}
-                {{--</div>--}}
+            {{--<div class="areaheader">--}}
+            {{--<h2>Categorys</h2>--}}
+            {{--</div>--}}
+            {{--<div class="categorylist">--}}
+            {{--@foreach($product_category as $producta)--}}
+            {{--<a href="{{route('frontend.product.catalog', ['slug'=>$producta->slug])}}">{{$producta->title}}</a>--}}
+            {{--@endforeach--}}
+            {{--</div>--}}
             {{--</div>--}}
             <div class="content">
                 <div class="areaheader">
@@ -36,7 +36,8 @@
                                 <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                                 <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                             </div>
-                            <a href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang' =>'en']) }}" class="getmore">Get
+                            <a href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang' =>'en']) }}"
+                               class="getmore">Get
                                 Order</a>
                         </div>
                     @endforeach

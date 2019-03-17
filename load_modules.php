@@ -108,9 +108,9 @@ if (!function_exists('ckeditor')) {
                 <script src='/assets/ckfinder/ckfinder.js' type='text/javascript'></script>
         <script>
         CKEDITOR.replace('$element_id',{
-//            filebrowserUploadMethod : 'form',
-//            filebrowserUploadUrl: '/backend/upload-image/{$module_name}/{$folder_name}/?',
-//            filebrowserImageUploadUrl: '/backend/upload-image/{$module_name}/{$folder_name}/?',
+           filebrowserUploadMethod : 'form',
+           filebrowserUploadUrl: '/backend/upload-image/{$module_name}/{$folder_name}/?',
+           filebrowserImageUploadUrl: '/backend/upload-image/{$module_name}/{$folder_name}/?',
         });
         
         CKFinder.setupCKEditor(null, '/assets/ckfinder/');
@@ -162,7 +162,6 @@ function change_lang($lang){
     $url = Request::url();
 
     $url = str_replace("/$lang", "/$select_lang", $url );
-
 
     \Illuminate\Support\Facades\Request::session()->put('lang', $select_lang);
 

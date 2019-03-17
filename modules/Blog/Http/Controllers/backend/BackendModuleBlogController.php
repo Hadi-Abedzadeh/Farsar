@@ -21,7 +21,7 @@ class BackendModuleBlogController extends Controller
     public function index()
     {
         $blog_posts = Post::orderBy('id', 'DESC')->paginate(5);
-        return view('default.blog.backend.posts.index', compact('blog_posts'));
+        return view(env('BACKEND_THEME_NAME').'.blog.posts.index', compact('blog_posts'));
     }
 
     /**

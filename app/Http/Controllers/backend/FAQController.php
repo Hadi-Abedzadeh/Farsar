@@ -17,7 +17,6 @@ class FAQController extends Controller
     {
         $faq = Faq::all();
         return view('default.faq.backend.index', compact('faq'));
-
     }
 
     /**

@@ -10,8 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 app()->setLocale('en');
 require_once(base_path('load_modules.php'));
 
@@ -37,7 +35,8 @@ Route::get('/lang/{lang}', function ($lang) {
 
 
 Route::get('/{lang?}/', function ($lang = null) {
-    if($lang == null) return redirect('/fa');
+
+
 
     $locale = set_lang($lang);
     $contact = \App\Contact::first();
@@ -48,7 +47,7 @@ Route::get('/{lang?}/', function ($lang = null) {
     if ($locale == 'fa') {
         $product_list = \Modules\Product\Models\Product::whereLang('fa')->orderBy('id', 'DESC')->limit(8)->get();
         return view(env('THEME_NAME') . '.layouts.fullpage-frontend', compact('contact', 'product_list'));
-    }else{
+    } else {
         $product_list = \Modules\Product\Models\Product_list::whereLang('en')->orderBy('id', 'DESC')->limit(3)->get();
         return view(env('THEME_NAME') . '.frontend-en.layouts.fullpage-frontend', compact('contact', 'product_list', 'news', 'projects'));
     }
@@ -64,10 +63,7 @@ Route::prefix('/backend')->middleware('auth')->group(function () {
 
     Route::resource('/about-us', 'backend\AboutController');
     Route::resource('/faq', 'backend\FAQController');
-
-
 });
-
 
 Route::get('/auth/backend', 'backend\BackendController@index')->middleware('auth');
 Route::get('/{lang?}/contact-us', 'frontend\FrontendController@show_contact')->name('contactus');

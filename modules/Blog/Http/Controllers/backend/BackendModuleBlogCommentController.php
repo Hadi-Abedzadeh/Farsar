@@ -17,7 +17,7 @@ class BackendModuleBlogCommentController extends Controller
      */
     public function index()
     {
-        $comments = Comment::with('post')->orderBy('id', 'DESC')->get();
+        return $comments = Comment::with('post')->orderBy('id', 'DESC')->get();
         return view('default.blog.backend.comments.index', compact('comments'));
     }
 

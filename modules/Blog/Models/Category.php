@@ -9,7 +9,7 @@ class Category extends Model
 {
 
     protected $table = 'blg_categories';
-    protected $fillable = ['id', 'name', 'slug'];
+    protected $guarded = [];
 
     public function posts()
     {

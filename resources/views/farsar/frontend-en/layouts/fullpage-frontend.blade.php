@@ -194,7 +194,6 @@
                     <a href="#" class="icon twitter"></a>
                     <a href="#" class="icon instagram"></a>
                 </div>
-                <a href="contactus.php" class="more">See More</a>
             </div>
             <div class="footermap"></div>
         </div>

@@ -9,6 +9,7 @@ class Product_list extends Model
 {
     protected $table = 'products_lists';
 
+    protected $guarded = [];
 
     use Sluggable;
 

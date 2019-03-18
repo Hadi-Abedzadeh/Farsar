@@ -16,8 +16,7 @@ class FAQController extends Controller
     public function index()
     {
         $faq = Faq::all();
-        return view('default.faq.backend.index', compact('faq'));
-
+        return view(env('BACKEND_THEME_NAME').'.faq.index', compact('faq'));
     }
 
     /**
@@ -27,7 +26,7 @@ class FAQController extends Controller
      */
     public function create()
     {
-        return view('default.faq.backend.create');
+        return view(env('BACKEND_THEME_NAME').'.faq.create');
     }
 
     /**
@@ -38,7 +37,16 @@ class FAQController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid_data = $request->validate([
+            'lang'  => 'required',
+            'answer' => 'required',
+            'question' => 'required',
+            'page_id'   => 'required',
+        ]);
+
+
+        Faq::create($valid_data);
+        return redirect()->back();
     }
 
     /**

@@ -60,7 +60,6 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
@@ -86,8 +85,7 @@
                 <article class="art-header-right">
                     <figure>
                         <a href="javascript:void(0)" title="farsar">
-                            <img src="/{{ env('THEME_NAME') }}/assets/images/sample/logo.png" alt="farsar"
-                                 title="farsar">
+                            <img src="/{{ env('THEME_NAME') }}/assets/images/sample/logo.png" alt="farsar" title="farsar">
                         </a>
                     </figure>
                     <nav class="primary-menu" role="navigation" aria-label="منو اصلی">
@@ -115,10 +113,13 @@
         </figure>
     </header>
     <div class="search-header">
-        <form action="#"><i class="i-s icon-Search"></i><input type="search"
-                                                               placeholder="عبارت مورد نظر خود را وارد کنید … "></form>
-        <span class="close-search"><img src="/{{env('THEME_NAME')}}/assets/images/sample/close-search.svg" alt=""
-                                        title=""></span></div>
+        <form action="#"><i class="i-s icon-Search"></i>
+            <input type="search" placeholder="عبارت مورد نظر خود را وارد کنید … ">
+        </form>
+        <span class="close-search">
+            <img src="/{{env('THEME_NAME')}}/assets/images/sample/close-search.svg" alt="" title="">
+        </span>
+    </div>
     <main>
         <div class="main-content">
             <div class="container">
@@ -212,27 +213,32 @@
 
                                 <span>
                                         امور مشتریان : <em>
-                                            {!! explode(',' ,\App\Contact::first()->tel)[2] !!}
+                                            {!! json_decode(\App\Contact::find(2)->tel)->tel1 !!}
 
                                     </em>
                                     </span>
                                 <span>
                                         روابط عمومی : <em>
-                                        {!! explode(',' ,\App\Contact::first()->tel)[1] !!}
+                                        {!! json_decode(\App\Contact::find(2)->tel)->tel2 !!}
                                     </em>
 
                                     </em>
                                     </span>
                                 <span>
                                         ارتباط با واحد فروش‌ : <em>
-                                        {!! explode(',' ,\App\Contact::first()->tel)[0] !!}</em>
+                                        {!! json_decode(\App\Contact::find(2)->tel)->tel3 !!}
+
+                                    </em>
                                     </span>
                                 <span>
-                                        ایمیل : <em> {!! \App\Contact::first()->email !!}</em>
+                                        ایمیل :
+                                    <em>
+                                        {!! json_decode(\App\Contact::find(2)->email)->email1 !!}
+                                    </em>
                                     </span>
                                 <span>
                                         آدرس دفتر فروش :‌ <em>
-                                        {!! \App\Contact::first()->etc !!}
+                                        {!! json_decode(\App\Contact::find(2)->address)->addr1 !!}
 
                                         </em>
                                     </span>
@@ -249,14 +255,15 @@
                             <address>
                                     <span>
                                         کارخانه شماره ۱ : <em>
-                                            شهرک صنعتی اشتهارد ، خیابان ابوریحان بیرونی ، خیابان
-                                            ملاصدرای غربی ، خیابان صبای
-                                            سوم،خیابان نسیم سوم، قطعه ۳۷۲۶</em>
+                                            {!! json_decode(\App\Contact::find(2)->address)->addr2 !!}
+
+                                        </em>
                                     </span>
                                 <span>
-                                        کارخانه شماره ۲ : <em>شهرک صنعتی اشتهارد ، خیابان ابوریحان بیرونی ، خیابان
-                                            ملاصدرای غربی ، خیابان صبای سوم
-                                            ،خیابان نسیم چهارم ، قطعه ۳۷۴۵</em>
+                                        کارخانه شماره ۲ : <em>
+                                        {!! json_decode(\App\Contact::find(2)->address)->addr3 !!}
+
+                                    </em>
                                     </span>
                             </address>
                         </article>

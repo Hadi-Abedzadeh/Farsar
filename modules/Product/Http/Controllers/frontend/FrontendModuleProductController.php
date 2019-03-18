@@ -26,6 +26,7 @@ class FrontendModuleProductController extends Controller
             return view(env('THEME_NAME') . '.frontend.product.index', compact('products', 'posts'));
         } else {
             $products = Product::whereLang($locale)->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
+
             return view(env('THEME_NAME') . '.frontend-en.product.index', compact('products', 'product_category'));
         }
     }
@@ -115,6 +116,10 @@ class FrontendModuleProductController extends Controller
         $get_products_list = Product::whereLang($locale)->get();
 
         $products = Product_list::whereLang($locale)->whereProduct_id($product_id)->get();
-        return view(env('THEME_NAME') . '.frontend.product.catalog', compact('products', 'get_products_list'));
+        if($locale == 'fa'){
+            return view(env('THEME_NAME') . '.frontend.product.catalog', compact('products', 'get_products_list'));
+        }else{
+            return view(env('THEME_NAME') . '.frontend-en.product.catalog', compact('products'));
+        }
     }
 }

@@ -15,6 +15,7 @@
 
                             @foreach($products as $product)
                                 <div class="col-md-8">
+                                  <a href="{{route('frontend.product.show', ['slug' => $product->slug, 'lang'=>'fa'])}}" title="مشاهده محصول">
                                     <article class="art-content-sider art-content-sider-any art-content-sider-products">
                                         <div>
                                             <figure>
@@ -24,8 +25,9 @@
                                         <header>
                                             <h3 class="c-h2">{{ $product->title }}</h3>
                                         </header>
-                                        <a class="a-btn-bggr a-btn" href="{{route('frontend.product.show', ['slug' => $product->slug, 'lang'=>'fa'])}}" title="مشاهده محصول">مشاهدهمحصول</a>
+                                        <!-- <a class="a-btn-bggr a-btn" href="{{route('frontend.product.show', ['slug' => $product->slug, 'lang'=>'fa'])}}" title="مشاهده محصول">مشاهدهمحصول</a> -->
                                     </article>
+                                   </a>
                                 </div>
                             @endforeach
                         </div>

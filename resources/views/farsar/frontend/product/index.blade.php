@@ -13,7 +13,7 @@
 
             <div class="row">
             @foreach($products as $product)
-            <div class="items col-xl-12 col-lg-12 col-md-24 col-sm-24">
+            <div class="items col-xl-8 col-lg-8 col-md-12 col-sm-24">
                     <article class="art-items">
                         <div class="thumbnail">
                             <figure>

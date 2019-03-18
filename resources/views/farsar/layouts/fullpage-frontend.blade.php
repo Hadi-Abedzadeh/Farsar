@@ -133,7 +133,7 @@
                 </div>
                 <article class="art-svg-about-main">
                     <figure class="bg-gr-svg-about">
-                        <img src="/{{ env('THEME_NAME') }}/assets/images/sample/bg-svg-main-about.png" alt="" title="">
+                        <img src="/{{ env('THEME_NAME') }}/assets/images/sample/bg-svg-main-about.jpg" alt="" title="">
                     </figure>
                 </article>
             </section>
@@ -152,6 +152,7 @@
                                 @foreach($product_list as $product)
 
                                     <div class="swiper-slide swiper-slide-active" style="margin-left: 11px;">
+                                    <a href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang'=> 'fa' ])}}" title="مشاهده محصول">
                                         <article class="art-content-sider">
                                             <div>
                                                 <figure>
@@ -161,10 +162,11 @@
                                             <header>
                                                 <h3 class="c-h2">{!! $product->title !!}</h3>
                                             </header>
-                                            <a class="a-btn-bggr a-btn"
+                                            <!-- <a class="a-btn-bggr a-btn"
                                                href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang'=> 'fa' ])}}"
-                                               title="مشاهده محصول">مشاهده محصول</a>
+                                               title="مشاهده محصول">مشاهده محصول</a> -->
                                         </article>
+                                        </a>
                                     </div>
                                 @endforeach
                             @endisset
@@ -181,10 +183,8 @@
                     <article class="art-svg-product">
                         <figure>
                             <img class="img-bg-svg-pro"
-                                 src="/{{ env('THEME_NAME') }}/assets/images/sample/svg-best-product.svg" alt=""
+                                 src="/{{ env('THEME_NAME') }}/assets/images/sample/Banktypehomepage.png" alt=""
                                  title="">
-                            <img class="img-art-pro"
-                                 src="/{{ env('THEME_NAME') }}/assets/images/sample/product/pro1.png" alt="" title="">
                         </figure>
                     </article>
                     {{ create_box_forth(5) }}

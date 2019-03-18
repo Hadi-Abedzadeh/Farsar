@@ -26,7 +26,7 @@ class Helper
         $cards = Card::wherePage_id($id)->whereActive(1)->get();
         foreach ($cards as $card) {
             echo "<article class='art-header-bottom-left icon-gr'>
-                    <i class='icon-home'><i class='path1'></i><i class='path2'></i></i>
+                    <figure><img src='/farsar/assets/images/sample/headerimage.jpg' alt='farsar' title='farsar'></figure>
                     <header>
                         <h2 class='c-h2'>$card->title</h2>
                     </header>

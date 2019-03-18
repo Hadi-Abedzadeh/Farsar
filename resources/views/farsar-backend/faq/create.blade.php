@@ -21,6 +21,7 @@
                     <input type="text" name="question" class="form-control" id="Title" placeholder="Enter Title">
                 </div>
 
+                <input type="hidden" name="page_id" value="1">
                 <div class="form-group">
                     <label for="body">جواب</label>
                     <textarea class="form-control" name="answer"  placeholder="body"></textarea>

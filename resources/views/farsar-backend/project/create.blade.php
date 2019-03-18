@@ -7,6 +7,7 @@
 
             <form action="{{ route('backend.project.store') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                {{ method_field('PATCH') }}
                 <div class="form-group">
                     <label for="category">انتخاب زبان</label>
                     <select class="form-control js-example-basic-multiple" id="lang" name="lang">
@@ -27,11 +28,10 @@
 
 
                 <div class="form-group">
-                    <label for="Title">Upload image</label>
-                    <input type="file" name="imageurls1" class="form-control">
-                    <input type="file" name="imageurls2" class="form-control">
-                    <input type="file" name="imageurls3" class="form-control">
-                    <input type="file" name="imageurls4" class="form-control">
+                    <input type="file" name="imageurl1" class="form-control">
+                    <input type="file" name="imageUrl2" class="form-control">
+                    <input type="file" name="imageUrl3" class="form-control">
+                    <input type="file" name="imageUrl4" class="form-control">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

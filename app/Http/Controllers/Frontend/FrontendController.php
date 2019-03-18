@@ -37,10 +37,16 @@ class FrontendController extends Controller
     }
 
 
-    public function faq()
+    public function faq($lang = null)
     {
-        $faq = Faq::all();
-        return view(env('THEME_NAME') . '.frontend.faq.index', compact('faq'));
+        $locale = set_lang($lang);
+
+        $faq = Faq::whereLang($locale)->get();
+        if($locale == 'fa'){
+            return view(env('THEME_NAME') . '.frontend.faq.index', compact('faq'));
+        }else{
+            return view(env('THEME_NAME') . '.frontend-en.faq.index', compact('faq'));
+        }
     }
 
     public function career($lang = null)

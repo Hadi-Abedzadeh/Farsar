@@ -3,6 +3,7 @@
 namespace Modules\Product\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Modules\Product\Models\Product;
 use Modules\Product\Models\Product_list;
@@ -38,7 +39,28 @@ class BackendModuleProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $valid_data = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'lang' => 'required',
+        ]);
+
+
+        if ($request->hasFile('imageUrl')) {
+            $image = $request->file('imageUrl');
+            $name = Carbon::now()->timestamp . str_slug($request->title) . '.' . $image->getClientOriginalExtension();
+            $destinationPath = '/uploads/product/product-images';
+            $imagePath = $destinationPath . "/" . $name;
+            $image->move($destinationPath, $name);
+        } else {
+            $imagePath = '';
+        }
+
+        Product::create(array_merge($valid_data, ['imageUrl' => $imagePath]));
+        return redirect()->back();
+
     }
 
     /**

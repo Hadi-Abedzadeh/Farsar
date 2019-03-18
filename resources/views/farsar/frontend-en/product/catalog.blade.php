@@ -2,11 +2,6 @@
 @section('content')
     <div class="container">
         <div class="gallerysliderarea owl-carousel">
-            @foreach($products as $product)
-                <div class="galleryslider">
-                    <img src="{{ $product->imageUrl}}">
-                </div>
-            @endforeach
         </div>
         <div class="innerarea">
             {{--<div class="category">--}}
@@ -29,19 +24,17 @@
                     </div>
                 </div>
                 <div class="productitems">
-                    @foreach($products as $product)
+                @foreach($products as $product)
                         <div class="productitem">
                             <h3>{{ $product->title }}</h3>
                             <div class="productitemimg">
-                                <img src="{{ $product->imageUrl }}" draggable="false">
+                                <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
                             </div>
-                            <a href="{{ route('frontend.product.catalog', ['slug' => $product->slug, 'lang' =>'en']) }}" class="getmore">Get Order</a>
+                            <a href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang' =>'en']) }}" class="getmore">Get Order</a>
                         </div>
                     @endforeach
-
-
                 </div>
-                {{ $products->links() }}
+
                 {{--<div class="pagination">--}}
                 {{--<a href="#">Back</a>--}}
                 {{--<a href="#">1</a>--}}

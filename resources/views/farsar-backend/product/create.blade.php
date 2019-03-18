@@ -26,25 +26,9 @@
                     <textarea class="form-control" name="body" id="body" placeholder="body"></textarea>
                 </div>
 
-
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select class="form-control js-example-basic-multiple" id="product_id" name="product_id">
-{{--                        @foreach($titles as $title)--}}
-                            {{--<option value="{{$title->id}}">{{$title->title}}</option>--}}
-                        {{--@endforeach--}}
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="code">code</label>
-                    <input class="form-control" name="code" id="code">
-                </div>
-
-
                 <div class="form-group">
                     <label for="imageUrl">Upload image</label>
-                    <input type="file" name="imageUrls" class="form-control">
+                    <input type="file" name="imageUrl" class="form-control">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

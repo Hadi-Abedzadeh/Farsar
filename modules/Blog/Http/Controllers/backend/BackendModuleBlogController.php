@@ -105,7 +105,7 @@ class BackendModuleBlogController extends Controller
     {
         $blog_post = Post::find($post->id);
         $categories = Category::all();
-        return view('default.blog.backend.posts.edit', compact('blog_post', 'categories'));
+        return view(env('BACKEND_THEME_NAME').'.blog.posts.edit', compact('blog_post', 'categories'));
     }
 
     /**
@@ -154,7 +154,6 @@ class BackendModuleBlogController extends Controller
 //            ->posts()->find($id);
 
         $post->categories()->attach(request('category'));
-
 
 //        if ($request->hasFile('imageUrl'))
 //            Post::find($id)->update(array_merge($valid_data, ['imageUrl' => $imagePath]));

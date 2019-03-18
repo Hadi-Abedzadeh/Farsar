@@ -9,20 +9,25 @@
             {{ csrf_field() }}
 
             <div class="form-group">
-                <label for="category">انتخاب زبان</label>
+                <label for="category">انتخاب زبان:</label>            <br>
+
                 <select class="form-control" id="lang" name="lang">
-                    <option value="fa">فارسی</option>
-                    <option value="en">English</option>
+                    <option @if($blog_post->lang == "fa") selected @endif value="fa">فارسی</option>
+                    <option @if($blog_post->lang == "en") selected @endif value="en">English</option>
                 </select>
             </div>
+            <br>
 
             <div class="form-group">
-                <label for="Title">Title</label>
-                <input type="text" name="title" class="form-control" id="Title" placeholder="Enter Title">
+                <label for="Title">عنوان:</label>            <br>
+
+                <input type="text" name="title" class="form-control" id="Title" placeholder="Enter Title" value="{{ $blog_post->title }}">
             </div>
 
+            <br>
             <div class="form-group">
-                <textarea class="form-control" name="body" id="body" placeholder="body"></textarea>
+                <label for="body">متن:</label>
+                <textarea class="form-control" name="body" id="body" placeholder="body">{{ $blog_post->body }}</textarea>
             </div>
 
             <div class="form-group">
@@ -33,7 +38,6 @@
                     @endforeach
                 </select>
             </div>
-
 
             <div class="form-group">
                 <label for="Title">Upload image</label>

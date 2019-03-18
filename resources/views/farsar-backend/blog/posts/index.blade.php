@@ -13,7 +13,7 @@
             <tbody>
             @foreach($blog_posts as $post)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
+                    <td><a href="{{ route('backend.blog.edit', ['post' => 1]) }}">{{ $loop->iteration }}</a></td>
                     <td>
                         {{ substr(strip_tags($post->title), 0, 100) }}
                         {{ strlen(strip_tags($post->title)) > 50 ? "..." : "" }}

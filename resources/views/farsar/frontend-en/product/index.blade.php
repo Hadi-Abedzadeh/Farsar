@@ -4,7 +4,7 @@
         <div class="gallerysliderarea owl-carousel">
             @foreach($products as $product)
                 <div class="galleryslider">
-                    <img src="{{ json_decode($product->imageUrls)->img1 }}">
+                    <img src="{{ $product->imageUrl}}">
                 </div>
             @endforeach
         </div>
@@ -33,12 +33,10 @@
                         <div class="productitem">
                             <h3>{{ $product->title }}</h3>
                             <div class="productitemimg">
-                                <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
-                                <img src="{{ json_decode($product->imageUrls)->img1 }}" draggable="false">
+                                <img src="{{ $product->imageUrls }}" draggable="false">
+                                <img src="{{ $product->imageUrls}}" draggable="false">
                             </div>
-                            <a href="{{ route('frontend.product.show', ['slug' => $product->slug, 'lang' =>'en']) }}"
-                               class="getmore">Get
-                                Order</a>
+                            <a href="{{ route('frontend.product.catalog', ['slug' => $product->slug, 'lang' =>'en']) }}" class="getmore">Get Order</a>
                         </div>
                     @endforeach
 

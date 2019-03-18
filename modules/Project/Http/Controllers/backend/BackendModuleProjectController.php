@@ -37,15 +37,24 @@ class BackendModuleProjectController extends Controller
      */
     public function store(Request $request)
     {
+
         $valid_data = $request->validate([
             'title' => 'required',
             'body' => 'required',
             'lang' => 'required',
-            'imageurls1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'imageurls2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'imageurls3' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+
+
+        if ($request->hasFile('imageUrl')) {
+            $image = $request->file('imageUrl');
+            $name = Carbon::now()->timestamp . str_slug($request->title) . '.' . $image->getClientOriginalExtension();
+            $destinationPath = '/uploads/product/product-images';
+            $imagePath = $destinationPath . "/" . $name;
+            $image->move($destinationPath, $name);
+        } else {
+            $imagePath = '';
+        }
 
         $slug = Project::whereTitle($valid_data['title'])->count();
         $slugPlus = $slug + 1;

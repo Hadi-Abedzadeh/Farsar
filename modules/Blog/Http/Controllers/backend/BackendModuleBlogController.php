@@ -54,7 +54,7 @@ class BackendModuleBlogController extends Controller
         if ($request->hasFile('imageUrl')) {
             $image = $request->file('imageUrl');
             $name = Carbon::now()->timestamp . str_slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $destinationPath = 'uploads/blog/post-images';
+            $destinationPath = '/uploads/blog/post-images';
             $imagePath = $destinationPath . "/" . $name;
             $image->move($destinationPath, $name);
         } else
@@ -126,7 +126,7 @@ class BackendModuleBlogController extends Controller
         if ($request->hasFile('imageUrl')) {
             $image = $request->file('imageUrl');
             $name = Carbon::now()->timestamp . str_slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $destinationPath = 'uploads/blog/post-images';
+            $destinationPath = '/uploads/blog/post-images';
             $imagePath = $destinationPath . "/" . $name;
             $image->move($destinationPath, $name);
         } else {

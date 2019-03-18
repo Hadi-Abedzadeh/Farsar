@@ -25,7 +25,7 @@ class FrontendModuleProductController extends Controller
             $products = Product::whereLang($locale)->orderBy('id', sorting())->limit(5)->get();
             return view(env('THEME_NAME') . '.frontend.product.index', compact('products', 'posts'));
         } else {
-            $products = Product_list::whereLang($locale)->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
+            $products = Product::whereLang($locale)->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
             return view(env('THEME_NAME') . '.frontend-en.product.index', compact('products', 'product_category'));
         }
     }

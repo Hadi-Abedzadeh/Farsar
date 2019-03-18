@@ -87,14 +87,14 @@
                     </figure>
                     <nav class="primary-menu" role="navigation" aria-label="منو اصلی">
                         <ul>
-                            <li><a href="http://127.0.0.1:8000" title="خانه">خانه</a></li>
-                            <li><a href="http://127.0.0.1:8000/about-us" title="درباره ما">درباره ما</a></li>
-                            <li><a href="http://127.0.0.1:8000/news" title="اخبار">اخبار</a></li>
-                            <li><a href="http://127.0.0.1:8000/products" title="محصولات">محصولات</a></li>
-                            <li><a href="http://127.0.0.1:8000/projects" title="پروژه ها">پروژه ها</a></li>
-                            <li><a href="http://127.0.0.1:8000/blog" title="بلاگ">بلاگ</a></li>
-                            <li><a href="http://127.0.0.1:8000/catalog" title="کاتالوگ">کاتالوگ</a></li>
-                            <li><a href="http://127.0.0.1:8000/contact-us" title="تماس با ما">تماس با ما</a></li>
+                            <li><a href="http://127.0.0.1:8000/fa" title="خانه">خانه</a></li>
+                            <li><a href="http://127.0.0.1:8000/fa/about-us" title="درباره ما">درباره ما</a></li>
+                            <li><a href="http://127.0.0.1:8000/fa/news" title="اخبار">اخبار</a></li>
+                            <li><a href="http://127.0.0.1:8000/fa/products" title="محصولات">محصولات</a></li>
+                            <li><a href="http://127.0.0.1:8000/fa/projects" title="پروژه ها">پروژه ها</a></li>
+                            <li><a href="http://127.0.0.1:8000/fa/blog" title="بلاگ">بلاگ</a></li>
+                            <li><a href="http://127.0.0.1:8000/fa/catalog" title="کاتالوگ">کاتالوگ</a></li>
+                            <li><a href="http://127.0.0.1:8000/fa/contact-us" title="تماس با ما">تماس با ما</a></li>
                         </ul>
                     </nav>
                 </article>

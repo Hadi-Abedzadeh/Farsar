@@ -37,7 +37,16 @@ class FAQController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid_data = $request->validate([
+            'lang'  => 'required',
+            'answer' => 'required',
+            'question' => 'required',
+            'page_id'   => 'required',
+        ]);
+
+
+        Faq::create($valid_data);
+        return redirect()->back();
     }
 
     /**

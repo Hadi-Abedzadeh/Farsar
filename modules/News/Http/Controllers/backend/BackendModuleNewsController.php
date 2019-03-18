@@ -50,7 +50,7 @@ class BackendModuleNewsController extends Controller
         if ($request->hasFile('imageUrl')) {
             $image = $request->file('imageUrl');
             $name = str_slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $destinationPath = 'uploads/news/post-images';
+            $destinationPath = '/uploads/news/post-images';
             $imagePath = $destinationPath . "/" . $name;
             $image->move($destinationPath, $name);
         } else
@@ -116,7 +116,7 @@ class BackendModuleNewsController extends Controller
         if ($request->hasFile('imageUrl')) {
             $image = $request->file('imageUrl');
             $name = str_slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $destinationPath = 'uploads/news/post-images';
+            $destinationPath = '/uploads/news/post-images';
             $imagePath = $destinationPath . "/" . $name;
             $image->move($destinationPath, $name);
         } else

@@ -87,7 +87,7 @@ html.fp-enabled,html.areahtml,html.responsveevy{opacity:1;}
 .projectgallery .innergallery{transition:.8s ease-in-out;position:absolute;opacity:0;top:0;right:-100%;width:100%;height:100%;}
 .projectgallery .innergallery.active{right:0;opacity:1;}
 .projectgallery .innergallery img{transition:.8s ease-in-out;opacity:0;position:absolute;top:0;right:-100%;min-width:100%;width:auto;height:100%;}
-.projectgallery .innergallery img.active{right:-50%;left:-50%;margin:auto;opacity:1;}
+.projectgallery .innergallery.active img.active{right:-50%;left:-50%;margin:auto;opacity:1;}
 .section.projects{overflow:hidden;}
 .section.projects h2{display:block;font-size:47px;font-weight:600;color:#141519;display:flex;margin-bottom:0;}
 .section.projects h2 .more{background:#fff;background:#0f2699;margin-left:0;margin-top:20px;position:relative;right:0;display:inline-block;}
@@ -219,7 +219,7 @@ header .socialmedias .icon{margin:15px 10px 0;}
 .blogposts .blogpost .more{font-size:25px;height:50px;width:170px;line-height:48px;font-weight:600;right:0;}
 .blogposts .blogpost p{padding:20px 20px 70px;font-weight:600;font-size:15px;line-height:24px;color:#898a8c;}
 #fullpage,#area,header,footer{transition:.3s ease-in-out;}
-body.menuactive #fullpage,body.menuactive #area,body.menuactive footer,body.menuactive header{filter:blur(25px);}
+body.menuactive #fullpage,body.menuactive #area,body.menuactive footer,body.menuactive header,body.menuactive .notfound{filter:blur(25px);}
 body.menuactive #menuactiver,body #menuactiver:hover{background:rgba(15,38,153,1);}
 #fullmenu{transition:.3s ease-in-out;opacity:0;right:-230px;position:fixed;display:flex;justify-content:center;align-content:center;flex-direction:column;z-index:3;top:0;width:200px;height:100%;}
 #fullmenu a{transition:.2s;position:relative;display:block;width:100%;text-align:center;font-size:25px;line-height:11vh;height:11vh;margin:1px 0;font-weight:600;color:#141519;}
@@ -282,15 +282,18 @@ footer .socialmedias{display:none;}
 .langchoser .chooselang a.russia:after{background:url(../images/flagrussia.svg) center;background-size:auto 70px;}
 .langchoser .chooselang a:hover:after{left:-30px;width:30px;}
 #menuactiver .langchoser{display:none;}
-
-
+.notfound{position:absolute;top:80px;left:0;display:flex;text-align:center;justify-content:center;align-content:center;flex-direction:column;background:transparent;width:calc(100% - 80px);height:calc(100% - 160px);}
+.area404 footer{position:fixed;width:calc(100% - 80px);left:0;bottom:0;}
+.area404 #area header .right{width:100%;justify-content:space-between;}
+.area404 .socialmedias{width:auto;}
+.area404 h1{font-size:180px;line-height:100px;margin-bottom:50px;font-weight:100;color:#0f2699;}
+.area404 h2{font-size:23px;font-weight:700;width:310px;margin:0 auto;}
 @media (min-width:1700px){
 .lefterberg{width:30%;}
 .section.about .content,.section.header::after{width:70%;}
 .section.header::after{width:70%;}
 .header h1{left:33%;}
 }
-
 /*BwzanBrewResponsiveSTART*/
 @media (max-width:1300px){
 .projectgallery{left:0;top:0;height:100%;z-index:auto;background:#ffff19;width:400px;overflow:hidden;bottom:0;margin:auto;}
@@ -373,6 +376,8 @@ header .socialmedias{padding-bottom:10px;justify-content:center;}
 #area header .right .searchbox input{width:220px;}
 header .socialmedias .icon{display:none;}
 footer .socialmedias{display:flex;position:relative;bottom:0;}
+.area404 #area header .right .searchbox{position: absolute;padding: 0 15px;bottom: 15px;right: 0;left: 0;margin: auto;}
+.area404 #area header .right .searchbox input{width: calc(100% - 60px);}
 }
 @media (max-width:600px){
 .fullproject .fullprojectside h3{position:relative;top:0;width:100%;font-size:25px;padding:30px 20px;}
@@ -453,6 +458,8 @@ body.menuactive #fullmenu{right:0;top:80px;}
 .projectgallery .innergallery img{transform:translateX(-100%);top:-50%;bottom:-50%;right:0;margin:auto;width:100%;min-height:100%;height:auto;}
 .projectgallery .innergallery img.active{transform:translateX(0);bottom:-50%;}
 .section.header::after{right:0;}
+.notfound{position:relative;width:100%;top:0;height:auto;padding:50px 0;}
+.area404 footer{position:relative;width:100%;}
 }
 @media(max-width:500px){
 .section.products h2,.footer h2,.section.news h2,.section.projects h2{flex-wrap:wrap;text-align:center;width:100%;justify-content:center;}

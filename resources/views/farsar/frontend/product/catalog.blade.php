@@ -14,8 +14,8 @@
                         <div class="row p15">
 
                             @foreach($products as $product)
-                                <div class="col-md-8">
-                                  <a href="{{route('frontend.product.show', ['slug' => $product->slug, 'lang'=>'fa'])}}" title="مشاهده محصول">
+                                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-24">
+                                  <a href="{{route('frontend.product.show', ['slug' => $product->slug, 'lang'=>'fa'])}}" title="مشاهده محصولات">
                                     <article class="art-content-sider art-content-sider-any art-content-sider-products">
                                         <div>
                                             <figure>

@@ -3,6 +3,7 @@
 namespace Modules\Project\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Modules\Project\Models\Project;
 
@@ -42,19 +43,28 @@ class BackendModuleProjectController extends Controller
             'title' => 'required',
             'body' => 'required',
             'lang' => 'required',
+
+            'imageUrl1' => 'nullable',
+            'imageUrl2' => 'nullable',
+            'imageUrl3' => 'nullable',
+            'imageUrl4' => 'nullable',
         ]);
 
-
-
+        $imagePath = array();
         if ($request->hasFile('imageUrl')) {
-            $image = $request->file('imageUrl');
-            $name = Carbon::now()->timestamp . str_slug($request->title) . '.' . $image->getClientOriginalExtension();
-            $destinationPath = '/uploads/product/product-images';
-            $imagePath = $destinationPath . "/" . $name;
-            $image->move($destinationPath, $name);
+            $images = $request->file('imageUrl');
+
+            foreach ($images as $image) {
+
+                $name = Carbon::now()->timestamp . str_slug($request->title) . '.' . $image->getClientOriginalExtension();
+                $destinationPath = '/uploads/product/product-images';
+                $imagePath[] = $destinationPath . "/" . $name;
+                $image->move(public_path($destinationPath), $name);
+            }
         } else {
             $imagePath = '';
         }
+
 
         $slug = Project::whereTitle($valid_data['title'])->count();
         $slugPlus = $slug + 1;
@@ -65,12 +75,13 @@ class BackendModuleProjectController extends Controller
             $slug = str_slug($valid_data['title'] . '-' . $slugPlus);
 
 
-            $img['img1'] = $valid_data['imageurls1'];
-            $img['img2'] = $valid_data['imageurls2'];
-            $img['img3'] = $valid_data['imageurls3'];
-            $img['img4'] = $valid_data['imageurls4'];
+        $img['img1'] = $imagePath[0];
+        $img['img2'] = $imagePath[1];
+        $img['img3'] = $imagePath[2];
+        $img['img4'] = $imagePath[3];
 
-            $img = json_encode($img);
+
+        $img =  json_encode($img);
 
         Project::create([
             'slug' => $slug,

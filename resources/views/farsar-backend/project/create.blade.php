@@ -28,10 +28,10 @@
 
 
                 <div class="form-group">
-                    <input type="file" name="imageurl1" class="form-control">
-                    <input type="file" name="imageUrl2" class="form-control">
-                    <input type="file" name="imageUrl3" class="form-control">
-                    <input type="file" name="imageUrl4" class="form-control">
+                    <input type="file" name="imageUrl[]" class="form-control">
+                    <input type="file" name="imageUrl[]" class="form-control">
+                    <input type="file" name="imageUrl[]" class="form-control">
+                    <input type="file" name="imageUrl[]" class="form-control">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -43,4 +43,4 @@
 
 @endsection
 
-@section('title', 'اضافه کردن اخبار')
+@section('title', 'اضافه کردن پروژه')

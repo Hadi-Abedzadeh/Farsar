@@ -22,9 +22,8 @@ class FrontendModuleProductController extends Controller
         $posts = Post::whereLang($locale)->limit(5)->get();
 
         if ($locale == 'fa') {
-            $products = Product::whereLang($locale)->orderBy('id', sorting())->get();
-            $product_list = Product_list::whereLang($locale)->orderBy('id', sorting())->get();
-            return view(env('THEME_NAME') . '.frontend.product.index', compact('product_list', 'posts', 'products'));
+            $products = Product::whereLang($locale)->orderBy('id', sorting())->limit(5)->get();
+            return view(env('THEME_NAME') . '.frontend.product.index', compact('products', 'posts'));
         } else {
             $products = Product::whereLang($locale)->orderBy('id', sorting())->paginate(env('PAGINATE_COUNT'));
 

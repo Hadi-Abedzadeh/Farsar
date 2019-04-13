@@ -4,6 +4,7 @@
 
     <div class="div-list-project">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div class="container-fluid">
             <section class="sect-slider-content-project sect-slider-content-catalog">
                 <header>
@@ -67,6 +68,8 @@
 
             </section>
 =======
+=======
+>>>>>>> parent of 4a9a2b2... finishd product page html
         <div class="container">
         <section class="sect-slider-content-project sect-slider-content-catalog">
             <header>
@@ -93,6 +96,9 @@
                 @endforeach
             </div>
         </section>
+<<<<<<< HEAD
+>>>>>>> parent of 4a9a2b2... finishd product page html
+=======
 >>>>>>> parent of 4a9a2b2... finishd product page html
         </div>
     </div>

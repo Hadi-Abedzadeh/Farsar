@@ -2932,6 +2932,7 @@ background-image: linear-gradient(-180deg, #1994ff 14%, #1478cf 100%);
 /* product */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .sect-slider-content-project.sect-slider-content-catalog{display: inherit;flex-wrap: inherit;padding: inherit;margin:80px 0;}
 .sect-slider-content-project{}
 .sect-slider-content-project>.row{margin: 50px 0;}
@@ -2957,6 +2958,8 @@ background-image: linear-gradient(-180deg, #1994ff 14%, #1478cf 100%);
 .swiper-product2.new.icon-prev::before{background: #FFFFFF;box-shadow: 0 0 22px 0 rgba(0,0,0,0.09);width: 50px;height: 50px;justify-content: center;align-items: center;display: flex;border-radius: 100%;transform: translateX(30px);}
 .swiper-product2.new.swiper-button-disabled{color: #cecece;}
 =======
+=======
+>>>>>>> parent of 4a9a2b2... finishd product page html
 .sect-slider-content-project {}
 .sect-slider-content-project>div {}
 .sect-slider-content-project>div .items {padding: 0 8px;margin-top: 60px;}
@@ -2969,6 +2972,9 @@ background-image: linear-gradient(-180deg, #1994ff 14%, #1478cf 100%);
 .sect-slider-content-project>div .items>article .content h3 em {font-size: 26px;font-weight: 800;color: #1478cf;}
 .sect-slider-content-project>div .items>article .content a {display: flex;align-items: center;justify-content: center;color: #fff;font-size: 1.5rem;font-weight: 500;width: 21rem;height: 6.4rem;border-radius: 3.2rem;background-image: linear-gradient(225deg, #1994ff 0%, #1478cf 100%);transition: .3s ease-in-out;margin-top: 20px;}
 .sect-slider-content-project>div .items>article .content a:hover{transform: scale(1.02);box-shadow: 0 15px 30px 1px rgba(0, 0, 0, .08);}
+<<<<<<< HEAD
+>>>>>>> parent of 4a9a2b2... finishd product page html
+=======
 >>>>>>> parent of 4a9a2b2... finishd product page html
 @media only screen and (min-width: 315px) and (max-width: 500px) {
     .sect-slider-content-project>div .items>article{height: auto !important;}

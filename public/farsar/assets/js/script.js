@@ -142,36 +142,6 @@
   },
   });
 
-  var swipermwiper = new Swiper('.swiper-container-p', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: '.swiper-product-next',
-      prevEl: '.swiper-product-prev',
-    },
-    breakpoints: {
-    // when window width is <= 620px
-    776: {
-      slidesPerView: 1,
-      // centeredSlides: true,
-      spaceBetween: 10
-    },
-    // when window width is <= 996px
-    1024: {
-      slidesPerView: 1,
-      spaceBetween: 15,
-      centeredSlides: true
-    },
-    // when window width is <= 1024px
-    1248: {
-      slidesPerView: 2,
-      // centeredSlides: true,
-      spaceBetween: 20
-    },
-    },
-  });
-
-
   $('.icon-Search,.close-search').click(function(){
     if(!$(".site-header-main").hasClass('active')){
        $('.site-header-main').addClass('active');

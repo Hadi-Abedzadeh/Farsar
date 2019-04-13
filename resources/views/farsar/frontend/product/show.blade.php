@@ -63,7 +63,9 @@
             <div class="container">
                 <div class="swiper-container slider-product">
                     <div class="swiper-wrapper">
+
                         @foreach($same_products as $same_product)
+
                             <div class="swiper-slide">
                                 <article class="art-content-sider art-content-sider-any">
                                     <div>

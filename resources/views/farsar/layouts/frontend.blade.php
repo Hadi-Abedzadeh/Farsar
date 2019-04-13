@@ -231,12 +231,11 @@
 
     </footer>
 </div>
+
 <script src="/{{env('THEME_NAME')}}/assets/js/jquery-3.3.1.min.js"></script>
-<!-- @yield('js') -->
 <script src="/{{env('THEME_NAME')}}/assets/js/swiper.jquery.min.js" defer="defer"></script>
 <script src="/{{env('THEME_NAME')}}/assets/js/parallax.min.js" defer="defer"></script>
 <script src="/{{env('THEME_NAME')}}/assets/js/script.js" defer="defer"></script>
-
 </body>
 
 </html>

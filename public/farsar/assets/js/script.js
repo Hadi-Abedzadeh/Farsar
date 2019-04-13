@@ -149,9 +149,6 @@
       nextEl: '.swiper-product-next',
       prevEl: '.swiper-product-prev',
     },
-    autoplay: {
-      delay: 4000,
-    },
     breakpoints: {
     // when window width is <= 620px
     776: {
@@ -164,7 +161,6 @@
       slidesPerView: 1,
       spaceBetween: 15,
       centeredSlides: true
-      
     },
     // when window width is <= 1024px
     1248: {
